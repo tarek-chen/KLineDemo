@@ -33,6 +33,7 @@ static KlineStyle *_style = nil;
         _maxScale = 3.0;
         _color_Line =
         
+        _textColor = UIColor.whiteColor;
         _color_up = [UIColor colorWithHex:0x56BD8C];
         _color_dn = [UIColor colorWithHex:0xC15465];
         _color_Line = [UIColor colorWithHex:0x6DB2EC];

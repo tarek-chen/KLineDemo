@@ -145,6 +145,7 @@
 }
 
 - (IBAction)mainChart:(UIButton *)sender {
+    BOOL BOLLChanged = isBOLL;
     switch (sender.tag) {
         case 0:
             // ma
@@ -165,7 +166,9 @@
         default:
             break;
     }
-    [[KLineDataManager manager] refreshData];
+    if (isBOLL || BOLLChanged) {
+        [[KLineDataManager manager] refreshData];
+    }
     [_kLineView draw];
 }
 

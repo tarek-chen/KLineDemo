@@ -135,6 +135,9 @@ static KLineDataManager *_manager = nil;
     __block CGFloat minVol = CGFLOAT_MAX;
     __block CGFloat maxVol = CGFLOAT_MIN;
 
+    __block CGFloat boll_min = CGFLOAT_MAX;
+    __block CGFloat boll_max = CGFLOAT_MIN;
+    
     __block CGFloat macd_min = CGFLOAT_MAX;
     __block CGFloat macd_max = CGFLOAT_MIN;
     
@@ -172,10 +175,11 @@ static KLineDataManager *_manager = nil;
             maxPrice = MAX(maxPrice, model.EMA30);
         }
         // BOLL
-        if ([self.data indexOfObject:model] >18 && isBOLL) {
-
-            minPrice = MIN(minPrice, model.DB);
-            maxPrice = MAX(maxPrice, model.UB);
+        if ([self.data indexOfObject:model] >18) {
+            boll_min = MIN(boll_min, model.DB);
+            boll_max = MAX(boll_max, model.UB);
+//            minPrice = MIN(minPrice, model.DB);
+//            maxPrice = MAX(maxPrice, model.UB);
         }
 
         // MACD
@@ -203,6 +207,13 @@ static KLineDataManager *_manager = nil;
 
     _minVol = minVol;
     _maxVol = maxVol;
+    
+    if (isBOLL) {
+        
+        _minPrice = MIN(boll_min, minPrice);
+        _maxPrice = MAX(boll_max, maxPrice);
+    }
+    
     
     _macd_min = macd_min;
     _macd_max = macd_max;
@@ -284,7 +295,7 @@ static KLineDataManager *_manager = nil;
             [EMA30Points addObject:@(CGPointMake(pointX, EMA30Y))];
         }
         // BOLL
-        if ([self.data indexOfObject:obj] >18) {
+        if ([self.data indexOfObject:obj] >18 && isBOLL) {
             CGFloat boll = [self mainChartYWithMaxY:maxY value:obj.BOLL min:self.minPrice unit:unitDistance];
             CGFloat ub = [self mainChartYWithMaxY:maxY value:obj.UB min:self.minPrice unit:unitDistance];
             CGFloat db = [self mainChartYWithMaxY:maxY value:obj.DB min:self.minPrice unit:unitDistance];
@@ -292,7 +303,6 @@ static KLineDataManager *_manager = nil;
             [UB addObject:@(CGPointMake(pointX, ub))];
             [DB addObject:@(CGPointMake(pointX, db))];
         }
-        
         // MCAD
         if (obj.DIF) {
             CGFloat pointY_DIF = [self bottomChartY:obj.DIF min:self.macd_min unit:unit_macd];

@@ -81,6 +81,7 @@
 - (void)setCandleOriginWithHigh:(CGFloat)high width:(CGFloat)width low:(CGFloat)low unitValue:(CGFloat)unitValue idx:(NSUInteger)idx maxY:(CGFloat)maxY;
 
 #pragma mark - 指标计算
+- (NSString *)volText;
 
 - (void)setMA:(NSInteger)num index:(NSInteger)index models:(NSArray <KLineModel *>*)models;
 

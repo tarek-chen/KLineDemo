@@ -13,10 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 #define isMA ENChartTypeMA == KlineStyle.style.topChartType
 #define isEMA ENChartTypeEMA == KlineStyle.style.topChartType
-#define isMACD ENChartTypeMACD == KlineStyle.style.bottomChartType
 #define isBOLL ENChartTypeBOLL == KlineStyle.style.topChartType
+#define isMACD ENChartTypeMACD == KlineStyle.style.bottomChartType
 #define isRSI ENChartTypeRSI == KlineStyle.style.bottomChartType
 #define isKDJ ENChartTypeKDJ == KlineStyle.style.bottomChartType
+#define isVOL ENChartTypeVOL == KlineStyle.style.bottomChartType
 // 颜色
 #define kLineColor1 KlineStyle.style.color_1
 #define kLineColor2 KlineStyle.style.color_2
@@ -63,6 +64,7 @@ typedef NS_ENUM(NSUInteger, ENChartType) {
 @property (nonatomic, assign) CGFloat maxScale;
 @property (nonatomic, assign) CGFloat candle_w;
 
+@property (nonatomic, strong) UIColor *textColor;
 /// 分时线颜色
 @property (nonatomic, strong) UIColor *color_Line;
 @property (nonatomic, strong) UIColor *color_AlphaLine;

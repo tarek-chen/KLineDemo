@@ -36,9 +36,9 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self addLongPressGes];
-        [self pinching];
-        [self dragGesture];
+        [self addLongPressGesture];
+        [self addPinchingGesture];
+        [self addDragGesture];
         _scale = 1;
     }
     return self;
@@ -117,7 +117,7 @@
 #pragma mark - 手势
 
 // 长按辅助线
-- (void)addLongPressGes {
+- (void)addLongPressGesture {
     
     // 长按
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
@@ -129,25 +129,29 @@
 - (void)longPress:(UILongPressGestureRecognizer *)ges {
     
     CGPoint point= [ges locationInView:self];
-    [self.flagLineLayer showFlagLineOnPoint:point];
+    NSInteger idx = (point.x - kChartBorderWidth) / (KlineStyle.style.candle_w + kCandleSpacing);
+    
     if (ges.state == UIGestureRecognizerStateBegan) {
-        [_flagLineLayer showFlagLineOnPoint:point];
+        [_textLayer showTitleInfoAtIndex:idx];
+        [_flagLineLayer showFlagLineAtIndex:idx];
     } else if (ges.state == UIGestureRecognizerStateChanged) {
-        [_flagLineLayer showFlagLineOnPoint:point];
+        [_textLayer showTitleInfoAtIndex:idx];
+        [_flagLineLayer showFlagLineAtIndex:idx];
     } else if (UIGestureRecognizerStateEnded == ges.state || ges.state == UIGestureRecognizerStateCancelled || ges.state == UIGestureRecognizerStateFailed) {
-        [_flagLineLayer flagWorkDidmiss];
+        [_flagLineLayer didmiss];
+        [_textLayer infoDismiss];
     }
 }
 
 // 捏合缩放
-- (void)pinching {
+- (void)addPinchingGesture {
     
-    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scaleAction:)];
+    UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(zoomAction:)];
     pinch.scale = 1;
     [self addGestureRecognizer:pinch];
 }
 
-- (void)scaleAction:(UIPinchGestureRecognizer *)pinch {
+- (void)zoomAction:(UIPinchGestureRecognizer *)pinch {
     
     switch (pinch.state) {
             case UIGestureRecognizerStateBegan:
@@ -201,7 +205,7 @@
 }
 
 // 拖动
-- (void)dragGesture {
+- (void)addDragGesture {
     UIPanGestureRecognizer *panGest = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(chartDidScroll:)];
     [self addGestureRecognizer:panGest];
 }
@@ -284,6 +288,7 @@
     
     // 长按辅助线的数据
     self.flagLineLayer.models = data.needDraw;
+    
 }
 
 - (void)resetLayers {

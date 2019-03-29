@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-
 #import "KlineStyle.h"
 
 @interface DKFlagLineLayer : CAShapeLayer
@@ -15,8 +14,8 @@
 @property (nonatomic, strong) NSArray *models;
 
 // 长按辅助线
-- (void)showFlagLineOnPoint:(CGPoint)point;
+- (void)showFlagLineAtIndex:(NSInteger)index;
 
-- (void)flagWorkDidmiss;
+- (void)didmiss;
 
 @end

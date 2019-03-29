@@ -60,15 +60,10 @@ static CGFloat kFlagLineWidth = .3f;
 }
 
 
-- (void)showFlagLineOnPoint:(CGPoint)point {
-        NSInteger idx = (point.x - kChartBorderWidth) / (KlineStyle.style.candle_w + kCandleSpacing);
+- (void)showFlagLineAtIndex:(NSInteger)index {
 
-    if (_flagIndex != idx && idx < _models.count) {
-//        NSLog(@"长按下标： %ld", idx);
-        KLineModel *model = _models[idx];
-        NSLog(@"MACD:%.4f, DIF:%.4f, DEA:%.4f", model.MACD, model.DIF, model.DEA);
-        NSLog(@"K:%.4f, D:%.4f, J:%.4f", model.K, model.D, model.J);
-        NSLog(@"BOLL:%.4f, UB:%.4f, DB:%.4f", model.BOLL, model.UB, model.DB);
+    if (_flagIndex != index && index < _models.count) {
+        KLineModel *model = _models[index];
         // 横线
         CGFloat horPositionY = model.candleY;
         //  红跌蜡烛取maxY
@@ -89,20 +84,19 @@ static CGFloat kFlagLineWidth = .3f;
         // 竖线
         self.lineVertical.frame = CGRectMake(model.lineTop.x, 0, kFlagLineWidth, CGRectGetHeight(_lineVertical.frame));
         self.flagCloseLayer.frame = CGRectMake(0, horPositionY-7.5, textWidth, 15);
-        [CATransaction commit];
-
-        _flagIndex = idx;
         
         if (_lineHorizontal.hidden) {
             _lineHorizontal.hidden = NO;
             _lineVertical.hidden = NO;
             _flagCloseLayer.hidden = NO;
         }
+        [CATransaction commit];
+        _flagIndex = index;
 
     }
 }
 
-- (void)flagWorkDidmiss {
+- (void)didmiss {
     _lineVertical.hidden = YES;
     _lineHorizontal.hidden = YES;
     _flagCloseLayer.hidden = YES;

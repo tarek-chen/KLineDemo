@@ -55,6 +55,23 @@
     CGFloat ma = [[self valueForKey:key_ma] floatValue];
     return ma;
 }
+
+// 量
+- (NSString *)volText {
+    
+    CGFloat k = _vol.floatValue / 1000;
+    CGFloat m = _vol.floatValue / 1000000;
+
+    NSString *volText = _vol;
+    if (m >= 0.1) {
+        volText = [NSString stringWithFormat:@"%.1fM", m];
+    }
+    else if (k > 0) {
+        volText = [NSString stringWithFormat:@"%.1fK", k];
+    }
+    return volText;
+}
+
 #pragma MARK -
 
 - (void)setCandleOriginWithHigh:(CGFloat)high width:(CGFloat)width low:(CGFloat)low unitValue:(CGFloat)unitValue idx:(NSUInteger)idx maxY:(CGFloat)maxY {

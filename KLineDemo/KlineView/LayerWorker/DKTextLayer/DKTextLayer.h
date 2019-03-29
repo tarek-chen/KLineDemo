@@ -15,4 +15,8 @@
 
 - (void)draw;
 
+- (void)showTitleInfoAtIndex:(NSInteger)index;
+- (void)infoDismiss;
+
+
 @end

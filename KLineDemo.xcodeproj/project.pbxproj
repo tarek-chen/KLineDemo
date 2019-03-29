@@ -35,6 +35,7 @@
 		4059132320CFA63A00B090F3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059131320CFA63A00B090F3 /* AFSecurityPolicy.m */; };
 		4059132720CFA69F00B090F3 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059132520CFA69F00B090F3 /* NetWorking.m */; };
 		4059132B20CFA80900B090F3 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059132A20CFA80900B090F3 /* KLineModel.m */; };
+		5E09623C224E6B38004395E3 /* NSString+Attributed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09623B224E6B38004395E3 /* NSString+Attributed.m */; };
 		5E2BFD7C224335FF00C1D7AE /* DKTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD69224335FE00C1D7AE /* DKTextLayer.m */; };
 		5E2BFD7D224335FF00C1D7AE /* DKCandleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD6D224335FE00C1D7AE /* DKCandleLayer.m */; };
 		5E2BFD7E224335FF00C1D7AE /* CAShapeLayer+kLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD70224335FE00C1D7AE /* CAShapeLayer+kLine.m */; };
@@ -124,6 +125,8 @@
 		4059132620CFA69F00B090F3 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
 		4059132920CFA80900B090F3 /* KLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
 		4059132A20CFA80900B090F3 /* KLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLineModel.m; sourceTree = "<group>"; };
+		5E09623A224E6B38004395E3 /* NSString+Attributed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Attributed.h"; sourceTree = "<group>"; };
+		5E09623B224E6B38004395E3 /* NSString+Attributed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attributed.m"; sourceTree = "<group>"; };
 		5E2BFD69224335FE00C1D7AE /* DKTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKTextLayer.m; sourceTree = "<group>"; };
 		5E2BFD6A224335FE00C1D7AE /* DKTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTextLayer.h; sourceTree = "<group>"; };
 		5E2BFD6C224335FE00C1D7AE /* DKCandleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCandleLayer.h; sourceTree = "<group>"; };
@@ -325,9 +328,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E096239224E6AC5004395E3 /* NSString+Attributed */ = {
+			isa = PBXGroup;
+			children = (
+				5E09623A224E6B38004395E3 /* NSString+Attributed.h */,
+				5E09623B224E6B38004395E3 /* NSString+Attributed.m */,
+			);
+			path = "NSString+Attributed";
+			sourceTree = "<group>";
+		};
 		5E2BFD66224335FE00C1D7AE /* KlineView */ = {
 			isa = PBXGroup;
 			children = (
+				5E096239224E6AC5004395E3 /* NSString+Attributed */,
 				5E2BFD67224335FE00C1D7AE /* LayerWorker */,
 				4059132820CFA7FF00B090F3 /* KLineModel */,
 				5E2BFD7A224335FE00C1D7AE /* DKLineView.h */,
@@ -583,6 +596,7 @@
 				4059131B20CFA63A00B090F3 /* UIWebView+AFNetworking.m in Sources */,
 				4059131D20CFA63A00B090F3 /* AFImageDownloader.m in Sources */,
 				5E2BFD7F224335FF00C1D7AE /* DKBackgroundLayer.m in Sources */,
+				5E09623C224E6B38004395E3 /* NSString+Attributed.m in Sources */,
 				5E551D6C223F8C5100A386C1 /* KlineStyle.m in Sources */,
 				4059132020CFA63A00B090F3 /* AFURLSessionManager.m in Sources */,
 				5E2BFD81224335FF00C1D7AE /* DKLineLayer.m in Sources */,

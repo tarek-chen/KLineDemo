@@ -39,8 +39,6 @@
 @property (nonatomic, strong) NSMutableArray *EMA7Points;
 @property (nonatomic, strong) NSMutableArray *EMA30Points;
 // BOLL
-@property (nonatomic, assign) CGFloat boll_min;
-@property (nonatomic, assign) CGFloat boll_max;
 @property (nonatomic, strong) NSMutableArray *BollPoints;
 @property (nonatomic, strong) NSMutableArray *UBPoints;
 @property (nonatomic, strong) NSMutableArray *DBPoints;
