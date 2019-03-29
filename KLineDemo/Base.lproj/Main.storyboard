@@ -60,8 +60,23 @@
                                     <action selector="mainChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLi-sW-1dZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rh-8d-xAd">
+                                <rect key="frame" x="208" y="408" width="30" height="30"/>
+                                <state key="normal" title="VOL"/>
+                                <connections>
+                                    <action selector="bottomChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxK-vF-QC8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZK-nU-M2L">
+                                <rect key="frame" x="218" y="370" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Line"/>
+                                <connections>
+                                    <action selector="mainChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2uX-jj-doF"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.33725490196078434" green="0.74117647058823533" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.42745098039215684" green="0.69803921568627447" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="trailing" constant="19" id="6gl-EN-OIv"/>
                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="centerX" secondItem="cek-1K-fBO" secondAttribute="centerX" id="7qn-ny-cG0"/>
@@ -69,12 +84,14 @@
                             <constraint firstItem="vHA-RA-Vso" firstAttribute="leading" secondItem="Hfs-ED-JKs" secondAttribute="trailing" constant="16" id="D1b-Nq-Lgk"/>
                             <constraint firstItem="sqN-d8-KqN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="EFa-Um-83m"/>
                             <constraint firstItem="VRJ-Jg-tpX" firstAttribute="centerY" secondItem="cek-1K-fBO" secondAttribute="centerY" id="RZ5-21-fau"/>
+                            <constraint firstItem="2rh-8d-xAd" firstAttribute="leading" secondItem="VRJ-Jg-tpX" secondAttribute="trailing" constant="10" id="SOZ-vO-NSy"/>
                             <constraint firstItem="tJM-k3-BJj" firstAttribute="top" secondItem="sqN-d8-KqN" secondAttribute="bottom" constant="8" id="VJc-Po-g0n"/>
                             <constraint firstItem="VRJ-Jg-tpX" firstAttribute="leading" secondItem="vHA-RA-Vso" secondAttribute="leading" id="X8R-rh-Nr7"/>
                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="centerY" secondItem="sqN-d8-KqN" secondAttribute="centerY" id="XCM-mb-iwm"/>
                             <constraint firstItem="tJM-k3-BJj" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="leading" id="cbR-Rp-sh5"/>
                             <constraint firstItem="vHA-RA-Vso" firstAttribute="centerY" secondItem="Hfs-ED-JKs" secondAttribute="centerY" id="dw9-jv-sby"/>
                             <constraint firstItem="cek-1K-fBO" firstAttribute="top" secondItem="Hfs-ED-JKs" secondAttribute="bottom" constant="8" id="hWz-lA-SOY"/>
+                            <constraint firstItem="2rh-8d-xAd" firstAttribute="centerY" secondItem="VRJ-Jg-tpX" secondAttribute="centerY" id="nai-uY-9hf"/>
                             <constraint firstItem="sqN-d8-KqN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="350" id="xAr-ff-jaW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

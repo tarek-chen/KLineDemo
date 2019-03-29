@@ -249,7 +249,9 @@
     
     // 蜡烛
     self.candleLayer.models = data.needDraw;
-    [self.candleLayer draw];
+    _candleLayer.lines = data.linePoints;
+
+    [_candleLayer draw];
     
     // 指标画线
     self.lineLayer.ma7Points = data.MA7Points;
@@ -274,8 +276,11 @@
     [self.lineLayer drawLines];
     
     // 高低价文字
-    self.textLayer.models = data.needDraw;
-    [_textLayer draw];
+    BOOL isLine = ENChartTypeLine == KlineStyle.style.topChartType;
+    if (!isLine) {
+        self.textLayer.models = data.needDraw;
+        [_textLayer draw];        
+    }
     
     // 长按辅助线的数据
     self.flagLineLayer.models = data.needDraw;

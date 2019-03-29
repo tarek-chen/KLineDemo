@@ -16,6 +16,11 @@ static KlineStyle *_style = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _style = [[KlineStyle alloc] init];
+        // 默认样式
+        _style.topChartType = ENChartTypeMA;
+        _style.bottomChartType = ENChartTypeVOL;
+        // 默认颜色
+        
     });
     return _style;
 }
@@ -26,8 +31,16 @@ static KlineStyle *_style = nil;
         _scale = 1;
         _minScale = 0.5;
         _maxScale = 3.0;
-        _upColor = [UIColor colorWithHex:0x56BD8C];
-        _dnColor = [UIColor colorWithHex:0xD32E70];
+        _color_Line =
+        
+        _color_up = [UIColor colorWithHex:0x56BD8C];
+        _color_dn = [UIColor colorWithHex:0xC15465];
+        _color_Line = [UIColor colorWithHex:0x6DB2EC];
+        _color_AlphaLine = [UIColor colorWithRed:109/255.0 green:178/255.0 blue:238/255.0 alpha:0.1];
+        _color_1 = [UIColor colorWithHex:0xE4D295];
+        _color_2 = [UIColor colorWithHex:0x73BBB0];
+        _color_3 = [UIColor colorWithHex:0xB58BE8];
+        _color_text1 = [UIColor colorWithHex:0x6226ED];
     }
     return self;
 }

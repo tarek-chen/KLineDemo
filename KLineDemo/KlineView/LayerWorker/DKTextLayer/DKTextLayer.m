@@ -43,6 +43,7 @@ static CGFloat kLabelHeight = 15;
     CGFloat originX = model.lineTop.x;
     NSString *aligment = kCAAlignmentLeft;
     NSString *priceStr = isMax ?model.high :model.low;
+    priceStr = [NSString stringWithFormat:@"%.4f", priceStr.floatValue];
     NSString *text = [NSString stringWithFormat:@"←%@", priceStr];
     if (originX > CGRectGetWidth(self.frame)/2) {
         originX -= labelWidth;

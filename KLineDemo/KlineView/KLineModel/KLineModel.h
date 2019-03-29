@@ -24,6 +24,7 @@
 @property (nonatomic, assign) CGFloat candleY;
 @property (nonatomic, assign) CGFloat candleH;
 @property (nonatomic, assign) CGFloat candleW;
+@property (nonatomic, assign) CGFloat volHeight;
 // 影线系数
 @property (nonatomic, assign) CGPoint lineTop;
 @property (nonatomic, assign) CGPoint lineBottom;

@@ -24,35 +24,38 @@
 @property (nonatomic, assign) CGFloat canvasHeight;
 @property (nonatomic, assign) CGFloat canvasWidth;
 // 收盘价
-@property (nonatomic, assign) CGFloat maxPrice;
 @property (nonatomic, assign) CGFloat minPrice;
+@property (nonatomic, assign) CGFloat maxPrice;
 
+// VOL
+@property (nonatomic, assign) CGFloat minVol;
+@property (nonatomic, assign) CGFloat maxVol;
+// Line
+@property (nonatomic, strong) NSMutableArray *linePoints;
+// MA
 @property (nonatomic, strong) NSMutableArray *MA7Points;
 @property (nonatomic, strong) NSMutableArray *MA30Points;
-
+// EMA
 @property (nonatomic, strong) NSMutableArray *EMA7Points;
 @property (nonatomic, strong) NSMutableArray *EMA30Points;
-
 // BOLL
+@property (nonatomic, assign) CGFloat boll_min;
+@property (nonatomic, assign) CGFloat boll_max;
 @property (nonatomic, strong) NSMutableArray *BollPoints;
 @property (nonatomic, strong) NSMutableArray *UBPoints;
 @property (nonatomic, strong) NSMutableArray *DBPoints;
-
 // MACD
 @property (nonatomic, assign) CGFloat macd_min;
 @property (nonatomic, assign) CGFloat macd_max;
 @property (nonatomic, strong) NSMutableArray *DIFPoints;
 @property (nonatomic, strong) NSMutableArray *DEAPoints;
 @property (nonatomic, strong) NSMutableArray *BARPoints;
-
-
 // KDJ
 @property (nonatomic, assign) CGFloat kdj_min;
 @property (nonatomic, assign) CGFloat kdj_max;
 @property (nonatomic, strong) NSMutableArray *KPoints;
 @property (nonatomic, strong) NSMutableArray *DPoints;
 @property (nonatomic, strong) NSMutableArray *JPoints;
-
 // RSI
 @property (nonatomic, assign) CGFloat rsi_min;
 @property (nonatomic, assign) CGFloat rsi_max;
@@ -61,6 +64,7 @@
 
 
 + (instancetype)manager;
+- (void)refreshData;
 - (void)addNewData:(KLineModel *)model;
 // 取出显示数据
 //getCandleData

@@ -158,9 +158,14 @@
             // BOLL
             KlineStyle.style.topChartType = ENChartTypeBOLL;
             break;
+        case 3:
+            // line
+            KlineStyle.style.topChartType = ENChartTypeLine;
+            break;
         default:
             break;
     }
+    [[KLineDataManager manager] refreshData];
     [_kLineView draw];
 }
 
@@ -178,9 +183,14 @@
             // rsi
             KlineStyle.style.bottomChartType = ENChartTypeRSI;
             break;
+        case 3:
+            // vol
+            KlineStyle.style.bottomChartType = ENChartTypeVOL;
+            break;
         default:
             break;
     }
+    [[KLineDataManager manager] refreshData];
     [_kLineView draw];
 }
 

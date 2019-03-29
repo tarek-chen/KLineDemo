@@ -13,6 +13,7 @@
 @interface DKCandleLayer : CAShapeLayer
 
 @property (nonatomic, strong) NSArray *models;
+@property (nonatomic, strong) NSArray *lines;
 
 - (void)draw;
 

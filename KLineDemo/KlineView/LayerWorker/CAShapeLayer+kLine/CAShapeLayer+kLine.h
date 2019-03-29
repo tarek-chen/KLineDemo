@@ -15,6 +15,8 @@
 - (instancetype)layerWithPath:(UIBezierPath *)path lineWidth:(CGFloat)width strokeColor:(UIColor *)strokeColor fillColor:(UIColor *)fillColor;
 /// 矩形
 - (instancetype)drawRectWithFrame:(CGRect)frame strokeColor:(UIColor *)strokeColor fillColor:(UIColor *)fillColor;
+/// 不规则图形
+- (instancetype)drawRectWithPoints:(NSArray *)points strokeColor:(UIColor *)strokeColor fillColor:(UIColor *)fillColor;
 ///  快速创建蜡烛
 - (instancetype)drawCandleWithFrame:(CGRect)frame color:(UIColor *)color;
 /// 画线

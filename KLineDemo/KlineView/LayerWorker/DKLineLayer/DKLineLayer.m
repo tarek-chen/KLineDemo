@@ -49,25 +49,25 @@
 
 - (void)MA {
     
-    CAShapeLayer *MA7Line = [self drawLineWithPoints:_ma7Points lineWidth:1 lineColor:[UIColor purpleColor]];
+    CAShapeLayer *MA7Line = [self drawLineWithPoints:_ma7Points lineWidth:1 lineColor:kLineColor1];
     [self addSublayer:MA7Line];
-    CAShapeLayer *MA30Line = [self drawLineWithPoints:_ma30Points lineWidth:1 lineColor:[UIColor redColor]];
+    CAShapeLayer *MA30Line = [self drawLineWithPoints:_ma30Points lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:MA30Line];
     
 }
 - (void)EMA {
-    CAShapeLayer *ema7 = [self drawLineWithPoints:_ema7Points lineWidth:1 lineColor:[UIColor redColor]];
+    CAShapeLayer *ema7 = [self drawLineWithPoints:_ema7Points lineWidth:1 lineColor:kLineColor1];
     [self addSublayer:ema7];
-    CAShapeLayer *ema30 = [self drawLineWithPoints:_ema30Points lineWidth:1 lineColor:[UIColor greenColor]];
+    CAShapeLayer *ema30 = [self drawLineWithPoints:_ema30Points lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:ema30];
 
 }
 - (void)BOLL {
-    CAShapeLayer *BollLine = [self drawLineWithPoints:_BOLLPoints lineWidth:1 lineColor:[UIColor redColor]];
+    CAShapeLayer *BollLine = [self drawLineWithPoints:_BOLLPoints lineWidth:1 lineColor:kLineColor1];
     [self addSublayer:BollLine];
-    CAShapeLayer *UBLine = [self drawLineWithPoints:_UBPoints lineWidth:1 lineColor:[UIColor greenColor]];
+    CAShapeLayer *UBLine = [self drawLineWithPoints:_UBPoints lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:UBLine];
-    CAShapeLayer *DBLine = [self drawLineWithPoints:_DBPoints lineWidth:1 lineColor:[UIColor blueColor]];
+    CAShapeLayer *DBLine = [self drawLineWithPoints:_DBPoints lineWidth:1 lineColor:kLineColor3];
     [self addSublayer:DBLine];
 
 }
@@ -81,31 +81,31 @@
         CGPoint minY = CGPointMake(pointX, barPoint.x);
         //            CGFloat minHeight = fabs(barPoint.y - pointX) > 1 : barPoint.y : 1;
         CGPoint maxY = CGPointMake(pointX, barPoint.y);
-        UIColor *color = model.BAR >0 ? UIColor.greenColor: UIColor.redColor;
+        UIColor *color = model.BAR >0 ? kCandleUpColor: kCandleDownColor;
         
         CAShapeLayer *barLine = [self drawLineFromPoint:minY toPoint:maxY lineWidth:candle_w color:color];
         [self addSublayer:barLine];
     }
     
-    CAShapeLayer *line_DIF = [self drawLineWithPoints:_DIFPoints lineWidth:1 lineColor:[UIColor redColor]];
+    CAShapeLayer *line_DIF = [self drawLineWithPoints:_DIFPoints lineWidth:1 lineColor:kLineColor1];
     [self addSublayer:line_DIF];
-    CAShapeLayer *line_DEA = [self drawLineWithPoints:_DEAPoints lineWidth:1 lineColor:[UIColor greenColor]];
+    CAShapeLayer *line_DEA = [self drawLineWithPoints:_DEAPoints lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:line_DEA];
 
 }
 
 - (void)KDJ {
-    CAShapeLayer *line_k = [self drawLineWithPoints:_KPoints lineWidth:1 lineColor:[UIColor redColor]];
+    CAShapeLayer *line_k = [self drawLineWithPoints:_KPoints lineWidth:1 lineColor:kLineColor1];
     [self addSublayer:line_k];
-    CAShapeLayer *line_d = [self drawLineWithPoints:_DPoints lineWidth:1 lineColor:[UIColor greenColor]];
+    CAShapeLayer *line_d = [self drawLineWithPoints:_DPoints lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:line_d];
-    CAShapeLayer *line_j = [self drawLineWithPoints:_JPoints lineWidth:1 lineColor:[UIColor blueColor]];
+    CAShapeLayer *line_j = [self drawLineWithPoints:_JPoints lineWidth:1 lineColor:kLineColor3];
     [self addSublayer:line_j];
 
 }
 
 - (void)RSI {
-    CAShapeLayer *rsi = [self drawLineWithPoints:_RSIPoints lineWidth:1 lineColor:[UIColor blueColor]];
+    CAShapeLayer *rsi = [self drawLineWithPoints:_RSIPoints lineWidth:1 lineColor:KlineStyle.style.color_1];
     [self addSublayer:rsi];
 
 }

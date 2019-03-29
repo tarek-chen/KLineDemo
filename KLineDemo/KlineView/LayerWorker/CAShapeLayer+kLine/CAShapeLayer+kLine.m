@@ -24,6 +24,14 @@
     return rectLayer;
 }
 
+- (instancetype)drawRectWithPoints:(NSArray *)points strokeColor:(UIColor *)strokeColor fillColor:(UIColor *)fillColor {
+    
+    // 边蜡烛框路径
+    UIBezierPath *path = [self pathForPoints:points];
+    CAShapeLayer *rectLayer = [self layerWithPath:path lineWidth:1 strokeColor:strokeColor fillColor:fillColor];
+    return rectLayer;
+}
+
 - (instancetype)drawLineFromPoint:(CGPoint)beginPoint toPoint:(CGPoint)endPoint lineWidth:(CGFloat)lineWidth color:(UIColor *)color {
     
     CAShapeLayer *lineLayer = [self drawLineWithPoints:@[@(beginPoint), @(endPoint)] lineWidth:lineWidth lineColor:color];

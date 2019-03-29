@@ -79,7 +79,7 @@ static KLineDataManager *_manager = nil;
     [model setKDJ:9 p2:3 p3:3 index:idx models:_data];
 //    [model setKDJ:14 p2:1 p3:3 index:idx models:self.data];
     [model setMACD:12 p2:26 p3:9 idx:idx models:_data];
-    [model setRSI:14 idx:idx models:_data];
+    [model setRSI:12 idx:idx models:_data];
 }
 
 - (void)addNewData:(KLineModel *)model {
@@ -130,8 +130,10 @@ static KLineDataManager *_manager = nil;
 // 计算最高价和最低价
 - (void)getLimitPrice {
     
-    __block CGFloat maxPrice = CGFLOAT_MIN;
     __block CGFloat minPrice = CGFLOAT_MAX;
+    __block CGFloat maxPrice = CGFLOAT_MIN;
+    __block CGFloat minVol = CGFLOAT_MAX;
+    __block CGFloat maxVol = CGFLOAT_MIN;
 
     __block CGFloat macd_min = CGFLOAT_MAX;
     __block CGFloat macd_max = CGFLOAT_MIN;
@@ -155,6 +157,10 @@ static KLineDataManager *_manager = nil;
             minPrice = MIN(minPrice, model.MA30);
             maxPrice = MAX(maxPrice, model.MA30);
         }
+        
+        minVol = MIN(minVol, model.vol.floatValue);
+        maxVol = MAX(maxVol, model.vol.floatValue);
+        
         // EMA
         if (model.EMA7) {
             minPrice = MIN(minPrice, model.EMA7);
@@ -166,17 +172,12 @@ static KLineDataManager *_manager = nil;
             maxPrice = MAX(maxPrice, model.EMA30);
         }
         // BOLL
-        if ([self.data indexOfObject:model] >18) {
+        if ([self.data indexOfObject:model] >18 && isBOLL) {
 
             minPrice = MIN(minPrice, model.DB);
             maxPrice = MAX(maxPrice, model.UB);
         }
-//            boll_min = MIN(boll_min, model.BOLL);
-//            boll_min = MIN(boll_min, model.UB);
-        
-//            boll_max = MAX(boll_max, model.BOLL);
-//            boll_max = MAX(boll_max, model.DB);
-        
+
         // MACD
         macd_min = MIN(macd_min, model.DIF);
         macd_min = MIN(macd_min, model.DEA);
@@ -200,6 +201,8 @@ static KLineDataManager *_manager = nil;
     _maxPrice = maxPrice;
     _minPrice = minPrice;
 
+    _minVol = minVol;
+    _maxVol = maxVol;
     
     _macd_min = macd_min;
     _macd_max = macd_max;
@@ -207,16 +210,16 @@ static KLineDataManager *_manager = nil;
     _kdj_min = kdj_min;
     _kdj_max = kdj_max;
     
-    _rsi_min = kdj_min;
-    _rsi_max = kdj_max;
+    _rsi_min = rsi_min;
+    _rsi_max = rsi_max;
 }
 
 // MA线路径
 - (void)getMAPoint {
     
     // 调整蜡烛可绘制范围
-    CGFloat maxY = _canvasHeight *kTopChartScale - kCanvasMargin;
-    CGFloat unitDistance = (_maxPrice - _minPrice) / (maxY - kCanvasMarginTop);
+    CGFloat maxY = _canvasHeight *kTopChartScale - kMainChartMarginBottom;
+    CGFloat unitDistance = (_maxPrice - _minPrice) / (maxY - kMainChartMarginTop);
     CGFloat candle_half = KlineStyle.style.candle_w/2;
     __block NSMutableArray *MA7Points = @[].mutableCopy;
     __block NSMutableArray *MA30Points = @[].mutableCopy;
@@ -229,7 +232,9 @@ static KLineDataManager *_manager = nil;
     __block NSMutableArray *DB = @[].mutableCopy;
     
     // 副图高度
-    CGFloat subChart_h = _canvasHeight * (1 - kTopChartScale) -kCanvasMarginTop *2 -kChartSpacing;
+    CGFloat subChart_h = _canvasHeight * (1 - kTopChartScale) -kChartSpacing - kSubChartMarginTop- kSubChartMarginBottom;
+    // Vol
+    CGFloat unit_vol = fabs(_maxVol - _minVol) / subChart_h;
     // MACD
     CGFloat unit_macd = fabs(_macd_max - _macd_min) / subChart_h;
     __block NSMutableArray *DIFPoints = @[].mutableCopy;
@@ -245,12 +250,16 @@ static KLineDataManager *_manager = nil;
     // RSI
     CGFloat unit_rsi = fabs(_rsi_max - _rsi_min) / subChart_h;
     __block NSMutableArray *rsiPoints = @[].mutableCopy;
-    
+    // line
+    __block NSMutableArray *line = @[].mutableCopy;
+
     [_needDraw enumerateObjectsUsingBlock:^(KLineModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 
         // 计算蜡烛坐标、高度
         [obj setCandleOriginWithHigh:self.maxPrice width:KlineStyle.style.candle_w low:self.minPrice unitValue:unitDistance idx:idx maxY:maxY];
         
+        // Line
+        [line addObject:@(CGPointMake(obj.candleX + candle_half, obj.candleY))];
         // MA坐标
         CGFloat pointX = obj.candleX + candle_half;
         if(obj.MA7) {
@@ -261,6 +270,9 @@ static KLineDataManager *_manager = nil;
             CGFloat MA30Y = [self mainChartYWithMaxY:maxY value:obj.MA30 min:self.minPrice unit:unitDistance];
             [MA30Points addObject:@(CGPointMake(pointX, MA30Y))];
         }
+        
+        // vol
+        obj.volHeight = obj.vol.floatValue / unit_vol;
         
         if (obj.EMA7) {
             
@@ -310,6 +322,8 @@ static KLineDataManager *_manager = nil;
         [rsiPoints addObject:@(CGPointMake(pointX, pointY_rsi))];
     }];
     
+    _linePoints = line;
+    
     _MA7Points = MA7Points;
     _MA30Points = MA30Points;
     
@@ -339,7 +353,7 @@ static KLineDataManager *_manager = nil;
 }
 
 - (CGFloat)bottomChartY:(CGFloat)value min:(CGFloat)min unit:(CGFloat)unitDistance {
-    CGFloat pointY = _canvasHeight - fabs(value - min)/unitDistance - kCanvasMarginBottom;
+    CGFloat pointY = _canvasHeight - fabs(value - min)/unitDistance - kSubChartMarginTop;
     return pointY;
 }
 

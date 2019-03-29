@@ -203,7 +203,6 @@
 			children = (
 				5EA55173224A0A6A00A0633A /* YYFPSLabel */,
 				5E2BFD66224335FE00C1D7AE /* KlineView */,
-				4059132820CFA7FF00B090F3 /* KLineModel */,
 				4059132420CFA69F00B090F3 /* NetWorking */,
 				405912F120CFA63A00B090F3 /* AFNetworking */,
 				404035C020B53B8400FB250D /* AppDelegate.h */,
@@ -330,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2BFD67224335FE00C1D7AE /* LayerWorker */,
+				4059132820CFA7FF00B090F3 /* KLineModel */,
 				5E2BFD7A224335FE00C1D7AE /* DKLineView.h */,
 				5E2BFD7B224335FE00C1D7AE /* DKLineView.m */,
 			);

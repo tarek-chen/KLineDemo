@@ -79,7 +79,7 @@
         // x
         self.candleX = idx * (width + kCandleSpacing) + kChartBorderWidth;
         // y换算笛卡尔坐标
-        self.candleY = candleY + kCanvasMarginTop;
+        self.candleY = candleY + kMainChartMarginTop;
     }
     
     // 影线
@@ -87,8 +87,8 @@
         CGFloat linCenterX = _candleX + _candleW /2; // 这里没计算影线宽度/2
         CGFloat lineHigh = ABS(self.high.floatValue - high) /unitValue;
         CGFloat lineLow = ABS(self.low.floatValue - high) /unitValue;
-        _lineTop = CGPointMake(linCenterX, lineHigh + kCanvasMarginTop);
-        _lineBottom = CGPointMake(linCenterX, lineLow +kCanvasMarginTop);
+        _lineTop = CGPointMake(linCenterX, lineHigh + kMainChartMarginTop);
+        _lineBottom = CGPointMake(linCenterX, lineLow +kMainChartMarginTop);
     }
 }
 

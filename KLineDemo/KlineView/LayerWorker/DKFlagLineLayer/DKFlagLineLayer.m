@@ -49,7 +49,7 @@ static CGFloat kFlagLineWidth = .3f;
     return _lineHorizontal;
 }
 
-//水平辅助线左侧收盘价
+// 水平辅助线左侧收盘价
 - (CATextLayer *)flagCloseLayer {
     if (!_flagCloseLayer) {
         _flagCloseLayer = [self getTextLayerWithString:@"0.00" textColor:[UIColor whiteColor] fontSize:12.0 backgroundColor:[UIColor grayColor] frame:CGRectMake(0, 0, 100, 15) aligmentMode:kCAAlignmentLeft];
@@ -75,16 +75,22 @@ static CGFloat kFlagLineWidth = .3f;
         if (model.open.floatValue > model.close.floatValue) {
             horPositionY = model.candleY+model.candleH;
         }
+        
+        
+        // 左侧标记收盘价格
+        NSString *closeText = [NSString stringWithFormat:@"%.4f", model.close.floatValue];
+        self.flagCloseLayer.string = closeText;
+        CGFloat textWidth = [self textWidthWithHeight:15 andFont:12 text:closeText];
+
+        // 关闭隐式动画
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
         self.lineHorizontal.frame = CGRectMake(0, horPositionY, kFlagLineWidth, CGRectGetHeight(_lineHorizontal.frame));
         // 竖线
         self.lineVertical.frame = CGRectMake(model.lineTop.x, 0, kFlagLineWidth, CGRectGetHeight(_lineVertical.frame));
-
-        // 左侧标记收盘价格
-        NSString *closeText = [NSString stringWithFormat:@"%@", model.close];
-        self.flagCloseLayer.string = closeText;
-        
-        CGFloat textWidth = [self textWidthWithHeight:15 andFont:12 text:closeText];
         self.flagCloseLayer.frame = CGRectMake(0, horPositionY-7.5, textWidth, 15);
+        [CATransaction commit];
+
         _flagIndex = idx;
         
         if (_lineHorizontal.hidden) {
