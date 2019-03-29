@@ -1,0 +1,20 @@
+PODS:
+  - GZIP (1.2.1)
+  - SocketRocket (0.5.1)
+
+DEPENDENCIES:
+  - GZIP
+  - SocketRocket
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GZIP
+    - SocketRocket
+
+SPEC CHECKSUMS:
+  GZIP: 7ee835f989fb3c6ea79005fc90b8fa6af710a70d
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+
+PODFILE CHECKSUM: 374537e3d250be7ae6ddccc658865ef873c9bfc1
+
+COCOAPODS: 1.6.1

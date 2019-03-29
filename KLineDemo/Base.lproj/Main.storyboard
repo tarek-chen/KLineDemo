@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sqN-d8-KqN">
+                                <rect key="frame" x="58" y="370" width="43" height="30"/>
+                                <state key="normal" title="MA"/>
+                                <connections>
+                                    <action selector="mainChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mba-LC-8oi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfs-ED-JKs">
+                                <rect key="frame" x="120" y="370" width="32" height="30"/>
+                                <state key="normal" title="EMA"/>
+                                <connections>
+                                    <action selector="mainChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wda-LL-heQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJM-k3-BJj">
+                                <rect key="frame" x="58" y="408" width="44" height="30"/>
+                                <state key="normal" title="MACD"/>
+                                <connections>
+                                    <action selector="bottomChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rzn-t9-PFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cek-1K-fBO">
+                                <rect key="frame" x="121" y="408" width="30" height="30"/>
+                                <state key="normal" title="KDJ"/>
+                                <connections>
+                                    <action selector="bottomChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSg-nj-Ql4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRJ-Jg-tpX">
+                                <rect key="frame" x="168" y="408" width="30" height="30"/>
+                                <state key="normal" title="RSI"/>
+                                <connections>
+                                    <action selector="bottomChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XES-jn-ntk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHA-RA-Vso">
+                                <rect key="frame" x="168" y="370" width="38" height="30"/>
+                                <state key="normal" title="BOLL"/>
+                                <connections>
+                                    <action selector="mainChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLi-sW-1dZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.33725490196078434" green="0.74117647058823533" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Hfs-ED-JKs" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="trailing" constant="19" id="6gl-EN-OIv"/>
+                            <constraint firstItem="Hfs-ED-JKs" firstAttribute="centerX" secondItem="cek-1K-fBO" secondAttribute="centerX" id="7qn-ny-cG0"/>
+                            <constraint firstItem="cek-1K-fBO" firstAttribute="leading" secondItem="tJM-k3-BJj" secondAttribute="trailing" constant="19" id="Cwj-rj-dh9"/>
+                            <constraint firstItem="vHA-RA-Vso" firstAttribute="leading" secondItem="Hfs-ED-JKs" secondAttribute="trailing" constant="16" id="D1b-Nq-Lgk"/>
+                            <constraint firstItem="sqN-d8-KqN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="EFa-Um-83m"/>
+                            <constraint firstItem="VRJ-Jg-tpX" firstAttribute="centerY" secondItem="cek-1K-fBO" secondAttribute="centerY" id="RZ5-21-fau"/>
+                            <constraint firstItem="tJM-k3-BJj" firstAttribute="top" secondItem="sqN-d8-KqN" secondAttribute="bottom" constant="8" id="VJc-Po-g0n"/>
+                            <constraint firstItem="VRJ-Jg-tpX" firstAttribute="leading" secondItem="vHA-RA-Vso" secondAttribute="leading" id="X8R-rh-Nr7"/>
+                            <constraint firstItem="Hfs-ED-JKs" firstAttribute="centerY" secondItem="sqN-d8-KqN" secondAttribute="centerY" id="XCM-mb-iwm"/>
+                            <constraint firstItem="tJM-k3-BJj" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="leading" id="cbR-Rp-sh5"/>
+                            <constraint firstItem="vHA-RA-Vso" firstAttribute="centerY" secondItem="Hfs-ED-JKs" secondAttribute="centerY" id="dw9-jv-sby"/>
+                            <constraint firstItem="cek-1K-fBO" firstAttribute="top" secondItem="Hfs-ED-JKs" secondAttribute="bottom" constant="8" id="hWz-lA-SOY"/>
+                            <constraint firstItem="sqN-d8-KqN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="350" id="xAr-ff-jaW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="129.98500749625188"/>
         </scene>
     </scenes>
 </document>
