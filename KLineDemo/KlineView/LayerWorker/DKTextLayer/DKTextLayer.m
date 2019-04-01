@@ -126,6 +126,7 @@ static CGFloat kLabelHeight = 15;
 - (CATextLayer *)mainTextLayer {
     if (!_mainTextLayer) {
         _mainTextLayer = [self getPublicTextLayerWithY:2];
+        _mainTextLayer.backgroundColor = UIColor.blackColor.CGColor;
         _mainTextLayer.contentsScale = UIScreen.mainScreen.scale;
         [self addSublayer:_mainTextLayer];
     }

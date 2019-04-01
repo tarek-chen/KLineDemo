@@ -74,7 +74,6 @@ static CGFloat kFlagLineWidth = .3f;
         
         // 左侧标记收盘价格
         NSString *closeText = [NSString stringWithFormat:@"%.4f", model.close.floatValue];
-        self.flagCloseLayer.string = closeText;
         CGFloat textWidth = [self textWidthWithHeight:15 andFont:12 text:closeText];
 
         // 关闭隐式动画
@@ -91,6 +90,8 @@ static CGFloat kFlagLineWidth = .3f;
             _flagCloseLayer.hidden = NO;
         }
         [CATransaction commit];
+        self.flagCloseLayer.string = closeText;
+
         _flagIndex = index;
 
     }
