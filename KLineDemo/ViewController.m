@@ -15,23 +15,31 @@
 #import "KLineModel.h"
 #import "KLineDataManager.h"
 #import "YYFPSLabel.h"
+
 @interface ViewController ()<SRWebSocketDelegate>
 @property (nonatomic, strong) DKLineView *kLineView;
 @property (nonatomic, strong) SRWebSocket *skt;
 @property (nonatomic, strong) SRWebSocket *skt_now;
+@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
+@property (weak, nonatomic) IBOutlet UIView *scrollView;
+
 @end
 
 @implementation ViewController
 
+
+- (void)dealloc {
+    [self close:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 
     self.view.backgroundColor = [UIColor whiteColor];
     _kLineView = [DKLineView new];
     _kLineView.backgroundColor = UIColor.blackColor;
     _kLineView.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, 300);
-    [self.view addSubview:_kLineView];
+    [self.scrollContentView addSubview:_kLineView];
 
     NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
     ws = @"wss://ws.dcoin.com/kline-api/ws?platform=1";
@@ -60,7 +68,7 @@
     
     NSMutableDictionary *param = @{@"channel":@"market_adausdt_kline_1min",@"cb_id":typeKey}.mutableCopy;
     if (_skt == webSocket) {
-        param[@"top"] = @(300);
+        param[@"top"] = @(600);
     }
     NSDictionary *reqParam = @{@"event":event,@"params":param};
 //    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:@{@"event":@"req",@"params":@{@"channel":@"market_etcusdt_kline_1min",@"cb_id":@"Klineetcusdt"}}
@@ -195,6 +203,11 @@
     }
     [[KLineDataManager manager] refreshData];
     [_kLineView draw];
+}
+- (IBAction)close:(UIButton *)sender {
+    
+    [_skt close];
+    [_skt_now close];
 }
 
 

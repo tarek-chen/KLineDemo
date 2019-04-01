@@ -24,6 +24,7 @@
 static CGFloat kLabelHeight = 15;
 
 - (void)draw {
+    
     __block CGFloat bottomY = CGFLOAT_MIN;
     __block CGFloat topY = CGFLOAT_MAX;
     __block KLineModel *topModel, *bottomModel;
@@ -38,7 +39,7 @@ static CGFloat kLabelHeight = 15;
         }
     }];
     
-    if (topModel) {
+    if (topModel && !isLine) {
         
         [self drawLimitTextForModel:topModel isMax:YES];
         [self drawLimitTextForModel:bottomModel isMax:NO];
@@ -91,6 +92,7 @@ static CGFloat kLabelHeight = 15;
     else if (isBOLL) {
         mainTitle = [NSString stringWithFormat:@"BOLL:%.6f, UB:%.6f, LB:%.6f", model.BOLL, model.UB, model.DB];
     }
+    
     self.mainTextLayer.string = mainTitle;
     
     // 副
@@ -124,6 +126,7 @@ static CGFloat kLabelHeight = 15;
 - (CATextLayer *)mainTextLayer {
     if (!_mainTextLayer) {
         _mainTextLayer = [self getPublicTextLayerWithY:2];
+        _mainTextLayer.contentsScale = UIScreen.mainScreen.scale;
         [self addSublayer:_mainTextLayer];
     }
     if (_mainTextLayer.hidden) {
@@ -136,6 +139,7 @@ static CGFloat kLabelHeight = 15;
     if (!_bottomTextLayer) {
         CGFloat y = CGRectGetHeight(self.frame) * kTopChartScale + kChartSpacing + 2;
         _bottomTextLayer = [self getPublicTextLayerWithY:y];
+        _bottomTextLayer.contentsScale = UIScreen.mainScreen.scale;
         [self addSublayer:_bottomTextLayer];
     }
     if (_bottomTextLayer.hidden) {
@@ -148,7 +152,7 @@ static CGFloat kLabelHeight = 15;
 - (CATextLayer *)getPublicTextLayerWithY:(CGFloat)y {
     CGFloat _x = 10;
     CGRect frame = CGRectMake(_x, y, UIScreen.mainScreen.bounds.size.width, kLabelHeight);
-    CATextLayer *publicLayer = [self getTextLayerWithString:nil textColor:KlineStyle.style.textColor fontSize:10 backgroundColor:UIColor.clearColor frame:frame aligmentMode:kCAAlignmentLeft];
+    CATextLayer *publicLayer = [self getTextLayerWithString:nil textColor:KlineStyle.style.textColor fontSize:8 backgroundColor:UIColor.clearColor frame:frame aligmentMode:kCAAlignmentLeft];
     return publicLayer;
 }
 
@@ -161,6 +165,9 @@ static CGFloat kLabelHeight = 15;
 - (void)colorTextLayer:(CATextLayer *)layer {
     
     NSString *str = layer.string;
+    if (!str) {
+        return;
+    }
     NSArray *subStr = [str componentsSeparatedByString:@","];
     
     NSMutableAttributedString *attStr = str.attributed;
@@ -171,7 +178,11 @@ static CGFloat kLabelHeight = 15;
     if (subStr.count >2) {
         [attStr cat_ColorText:@[subStr[2]] color:KlineStyle.style.color_3];
     }
+    // 关闭隐式动画
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
     layer.string = attStr;
+    [CATransaction commit];
 }
 
 

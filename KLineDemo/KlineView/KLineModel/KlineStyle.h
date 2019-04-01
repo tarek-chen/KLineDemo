@@ -11,13 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 // 类型
 
-#define isMA ENChartTypeMA == KlineStyle.style.topChartType
-#define isEMA ENChartTypeEMA == KlineStyle.style.topChartType
-#define isBOLL ENChartTypeBOLL == KlineStyle.style.topChartType
-#define isMACD ENChartTypeMACD == KlineStyle.style.bottomChartType
-#define isRSI ENChartTypeRSI == KlineStyle.style.bottomChartType
-#define isKDJ ENChartTypeKDJ == KlineStyle.style.bottomChartType
-#define isVOL ENChartTypeVOL == KlineStyle.style.bottomChartType
+#define isMA (ENChartTypeMA == KlineStyle.style.topChartType)
+#define isEMA (ENChartTypeEMA == KlineStyle.style.topChartType)
+#define isBOLL (ENChartTypeBOLL == KlineStyle.style.topChartType)
+#define isLine (ENChartTypeLine == KlineStyle.style.topChartType)
+#define isMACD (ENChartTypeMACD == KlineStyle.style.bottomChartType)
+#define isRSI (ENChartTypeRSI == KlineStyle.style.bottomChartType)
+#define isKDJ (ENChartTypeKDJ == KlineStyle.style.bottomChartType)
+#define isVOL (ENChartTypeVOL == KlineStyle.style.bottomChartType)
 // 颜色
 #define kLineColor1 KlineStyle.style.color_1
 #define kLineColor2 KlineStyle.style.color_2

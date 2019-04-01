@@ -19,7 +19,6 @@
 - (void)draw {
     
     // 分时
-    BOOL isLine = ENChartTypeLine == KlineStyle.style.topChartType;
     if (isLine) {
         [self drawLineChart];
     }

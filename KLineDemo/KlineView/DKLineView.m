@@ -15,8 +15,9 @@
 #import "DKFlagLineLayer.h"
 #import "KLineDataManager.h"
 #import "KlineStyle.h"
+#import "ENPanGestureRecognizer.h"
 
-@interface DKLineView ()
+@interface DKLineView ()<UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) DKBackgroundLayer *bgLayer;
 @property (nonatomic, strong) DKCandleLayer *candleLayer;
@@ -24,10 +25,20 @@
 @property (nonatomic, strong) DKTextLayer *textLayer;
 @property (nonatomic, strong) DKFlagLineLayer *flagLineLayer;
 
+@property (nonatomic, strong) ENPanGestureRecognizer *dragGest;
 
 @property (nonatomic, assign) NSInteger dragCount;
 @property (nonatomic, assign) CGFloat touchPointX;
 @property (nonatomic, assign) CGFloat scale;
+
+
+@property (nonatomic, strong) CADisplayLink *dis; //定时器
+@property (nonatomic, assign) NSInteger updateCount;    //需要刷新次数
+@property (nonatomic, assign) NSInteger currentCount;   //
+@property (nonatomic, assign) CGPoint velocity;   //速度
+@property (nonatomic, assign) CGPoint lastLocation;   //速度
+@property (nonatomic, assign) CGFloat total;
+
 
 @end
 
@@ -167,8 +178,6 @@
                pinch.scale = KlineStyle.style.maxScale;
                 break;
             }
-            NSLog(@"%.2F", _scale);
-
 
 //             最少20个，默认40，最大80个
             
@@ -206,43 +215,77 @@
 
 // 拖动
 - (void)addDragGesture {
-    UIPanGestureRecognizer *panGest = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(chartDidScroll:)];
-    [self addGestureRecognizer:panGest];
+    _dragGest = [[ENPanGestureRecognizer alloc]initWithTarget:self action:@selector(chartDidScroll:)];
+    _dragGest.delegate = self;
+    [self addGestureRecognizer:_dragGest];
 }
 
 -(void)chartDidScroll:(UIPanGestureRecognizer *)panGest{
 
     NSInteger count = 0;
-    BOOL isEnd = NO;
     
-    CGPoint touch = [panGest locationInView:self];
-
-    if (UIGestureRecognizerStateBegan == panGest.state) {
-        _touchPointX = touch.x;
-    }
-    else if (UIGestureRecognizerStateChanged == panGest.state) {
-        count = (touch.x - _touchPointX)/(KlineStyle.style.candle_w + kCandleSpacing);
+    CGFloat transPoint = [panGest translationInView:self].x;
+    if (UIGestureRecognizerStateChanged == panGest.state) {
         
-        if (_dragCount != count) {
+        
+        CGFloat candleW = (KlineStyle.style.candle_w * KlineStyle.style.scale);
+        count = transPoint /candleW;
+        
+        if (_dragCount != count && count != 0) {
             
-            // -1 向右
-            if (count <0) {
-                [KLineDataManager manager].showIndex ++;
-            } else {
-                [KLineDataManager manager].showIndex --;
-            }
-            
+            // count < 0, 手指向左滑动
+            [KLineDataManager manager].showIndex -= count;
+
             [self draw];
             _dragCount = count;
+            [panGest setTranslation:CGPointZero inView:self];
         }
-    } else if (UIGestureRecognizerStateEnded == panGest.state || UIGestureRecognizerStateCancelled == panGest.state) {
-        
-        isEnd = YES;
     }
-
+    else if (UIGestureRecognizerStateEnded == panGest.state) {
+            if (_dis) {
+                [_dis invalidate];
+                _dis = nil;
+            }
+        
+            _velocity = [panGest velocityInView:self];
+            CGFloat magnitude = sqrtf(_velocity.x * _velocity.x);
+            CGFloat slideMult = magnitude / 200;
+            float slideFactor = 0.1 * slideMult;
+            _updateCount = slideFactor * 120 + 1;
+            _dis = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateView)];
+            [_dis addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        }
     
 }
 
+// 惯性动画
+-(void)updateView {
+    
+    _currentCount++;
+    if (_currentCount>_updateCount || _currentCount>60) {
+        
+        //        dis.paused = YES;
+        [_dis removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+        [_dis invalidate];
+        _dis = nil;
+        _currentCount = 0;
+        _updateCount = 0;
+    }else{
+        CGPoint point = CGPointMake(_velocity.x/20/_currentCount, 0);
+        _total += point.x;
+        NSInteger count = _total / (KlineStyle.style.candle_w * KlineStyle.style.scale);
+        if (count != 0) {
+            
+            // count < 0, 手指向左滑动
+            [KLineDataManager manager].showIndex -= count;
+            
+            [self draw];
+            _dragCount = count;
+            _total = 0;
+        }
+    }
+    
+}
 #pragma mark - 统一绘制
 - (void)draw {
     
@@ -280,15 +323,29 @@
     [self.lineLayer drawLines];
     
     // 高低价文字
-    BOOL isLine = ENChartTypeLine == KlineStyle.style.topChartType;
-    if (!isLine) {
-        self.textLayer.models = data.needDraw;
-        [_textLayer draw];        
-    }
+    self.textLayer.models = data.needDraw;
+    [_textLayer draw];
     
     // 长按辅助线的数据
     self.flagLineLayer.models = data.needDraw;
     
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if (_dragGest == gestureRecognizer && UIGestureRecognizerStateBegan == _dragGest.state) {
+        CGPoint distance = [_dragGest translationInView:self];
+        CGPoint velocity = [_dragGest velocityInView:self];
+        if (fabs(distance.x) > fabs(distance.y) && fabs(velocity.x) > fabs(velocity.y)) {
+            // 横向滑动，禁止父视图滑动手势
+            return NO;
+        } else {
+            // 纵向，禁止k线滑动
+            [_dragGest cancellTouches];
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (void)resetLayers {
@@ -296,9 +353,9 @@
     _candleLayer = nil;
     [_lineLayer removeFromSuperlayer];
     _lineLayer = nil;
-    [self.textLayer removeFromSuperlayer];
-    self.textLayer = nil;
-    
+    [_textLayer setSublayers:nil];
+    [_textLayer removeFromSuperlayer];
+    _textLayer = nil;
 }
 
 

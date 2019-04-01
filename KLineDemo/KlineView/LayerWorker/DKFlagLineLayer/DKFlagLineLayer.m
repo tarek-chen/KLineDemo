@@ -67,7 +67,7 @@ static CGFloat kFlagLineWidth = .3f;
         // 横线
         CGFloat horPositionY = model.candleY;
         //  红跌蜡烛取maxY
-        if (model.open.floatValue > model.close.floatValue) {
+        if (model.open.floatValue > model.close.floatValue && !isLine) {
             horPositionY = model.candleY+model.candleH;
         }
         

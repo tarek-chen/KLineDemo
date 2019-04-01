@@ -363,7 +363,7 @@ static KLineDataManager *_manager = nil;
 }
 
 - (CGFloat)bottomChartY:(CGFloat)value min:(CGFloat)min unit:(CGFloat)unitDistance {
-    CGFloat pointY = _canvasHeight - fabs(value - min)/unitDistance - kSubChartMarginTop;
+    CGFloat pointY = _canvasHeight - fabs(value - min)/unitDistance - kSubChartMarginBottom;
     return pointY;
 }
 
