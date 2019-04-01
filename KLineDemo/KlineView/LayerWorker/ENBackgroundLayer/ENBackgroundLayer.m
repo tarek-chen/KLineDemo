@@ -1,17 +1,17 @@
 //
-//  DKBackgroundLayer.m
+//  ENBackgroundLayer.m
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKBackgroundLayer.h"
+#import "ENBackgroundLayer.h"
 #import "UIColor+KLineTheme.h"
 #import "CAShapeLayer+kLine.h"
 #import "KlineStyle.h"
 
-@interface DKBackgroundLayer()
+@interface ENBackgroundLayer()
 
 @property (nonatomic, strong) UIBezierPath *topChartPath;
 @property (nonatomic, strong) CAShapeLayer *topChartBG;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation DKBackgroundLayer
+@implementation ENBackgroundLayer
 
 - (void)layoutSublayers {
     [super layoutSublayers];

@@ -1,5 +1,5 @@
 //
-//  DKLineView.h
+//  ENChartView.h
 //  KLineDemo
 //
 //  Created by easy on 2018/6/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "KLineModel.h"
 
-@interface DKLineView : UIView
+@interface ENChartView : UIView
 
 - (void)draw;
 

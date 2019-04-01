@@ -1,17 +1,17 @@
 //
-//  DKLineLayer.m
+//  ENLineLayer.m
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKLineLayer.h"
+#import "ENLineLayer.h"
 #import "CAShapeLayer+kLine.h"
 #import "KLineDataManager.h"
 #import "KlineStyle.h"
 
-@implementation DKLineLayer
+@implementation ENLineLayer
 
 - (void)drawLines {
     ENChartType top = KlineStyle.style.topChartType;

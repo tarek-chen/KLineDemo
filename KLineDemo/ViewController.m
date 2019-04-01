@@ -8,16 +8,15 @@
 
 #import "ViewController.h"
 #import "NetWorking.h"
-#import "DKLineView.h"
+#import "ENChartView.h"
 #import "UIColor+KLineTheme.h"
 #import "SRWebSocket.h"
 #import "GZIP.h"
 #import "KLineModel.h"
 #import "KLineDataManager.h"
-#import "YYFPSLabel.h"
 
 @interface ViewController ()<SRWebSocketDelegate>
-@property (nonatomic, strong) DKLineView *kLineView;
+@property (nonatomic, strong) ENChartView *kLineView;
 @property (nonatomic, strong) SRWebSocket *skt;
 @property (nonatomic, strong) SRWebSocket *skt_now;
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
@@ -36,7 +35,7 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor whiteColor];
-    _kLineView = [DKLineView new];
+    _kLineView = [ENChartView new];
     _kLineView.backgroundColor = UIColor.blackColor;
     _kLineView.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, 300);
     [self.scrollContentView addSubview:_kLineView];
@@ -50,9 +49,6 @@
     _skt_now = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
     _skt_now.delegate = self;
     
-    
-//    YYFPSLabel *fps = [[YYFPSLabel alloc] initWithFrame:CGRectMake(0, 40, 60, 20)];
-//    [self.view addSubview:fps];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {

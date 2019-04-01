@@ -1,17 +1,17 @@
 //
-//  DKFlagLineLayer.m
+//  ENFlagLineLayer.m
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKFlagLineLayer.h"
+#import "ENFlagLineLayer.h"
 #import <UIKit/UIKit.h>
 #import "KLineModel.h"
 #import "CAShapeLayer+kLine.h"
 
-@interface DKFlagLineLayer()
+@interface ENFlagLineLayer()
 
 // 竖线
 @property (nonatomic, strong) CAShapeLayer *lineVertical;
@@ -24,7 +24,7 @@
 @end
 
 
-@implementation DKFlagLineLayer
+@implementation ENFlagLineLayer
 static CGFloat kFlagLineWidth = .3f;
 
 #pragma mark - 长按辅助线

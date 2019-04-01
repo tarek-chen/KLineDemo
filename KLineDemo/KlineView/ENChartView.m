@@ -1,29 +1,29 @@
 //
-//  DKLineView.m
+//  ENChartView.m
 //  KLineDemo
 //
 //  Created by easy on 2018/6/11.
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKLineView.h"
+#import "ENChartView.h"
 #import "UIColor+KLineTheme.h"
-#import "DKBackgroundLayer.h"
-#import "DKCandleLayer.h"
-#import "DKLineLayer.h"
-#import "DKTextLayer.h"
-#import "DKFlagLineLayer.h"
+#import "ENBackgroundLayer.h"
+#import "ENCandleLayer.h"
+#import "ENLineLayer.h"
+#import "ENTextLayer.h"
+#import "ENFlagLineLayer.h"
 #import "KLineDataManager.h"
 #import "KlineStyle.h"
 #import "ENPanGestureRecognizer.h"
 
-@interface DKLineView ()<UIGestureRecognizerDelegate>
+@interface ENChartView ()<UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) DKBackgroundLayer *bgLayer;
-@property (nonatomic, strong) DKCandleLayer *candleLayer;
-@property (nonatomic, strong) DKLineLayer *lineLayer;
+@property (nonatomic, strong) ENBackgroundLayer *bgLayer;
+@property (nonatomic, strong) ENCandleLayer *candleLayer;
+@property (nonatomic, strong) ENLineLayer *lineLayer;
 @property (nonatomic, strong) DKTextLayer *textLayer;
-@property (nonatomic, strong) DKFlagLineLayer *flagLineLayer;
+@property (nonatomic, strong) ENFlagLineLayer *flagLineLayer;
 
 @property (nonatomic, strong) ENPanGestureRecognizer *dragGest;
 
@@ -42,7 +42,7 @@
 
 @end
 
-@implementation DKLineView
+@implementation ENChartView
 
 - (instancetype)init {
     self = [super init];
@@ -69,9 +69,9 @@
 #pragma mark - Setter & Getter
 
 #pragma mark - Layer组件
-- (DKBackgroundLayer *)bgLayer {
+- (ENBackgroundLayer *)bgLayer {
     if (!_bgLayer) {
-        _bgLayer = [DKBackgroundLayer layer];
+        _bgLayer = [ENBackgroundLayer layer];
         _bgLayer.frame = self.bounds;
         [self.layer addSublayer:_bgLayer];
     }
@@ -80,9 +80,9 @@
 
 #pragma mark -- 蜡烛层
 // 蜡烛容器layer
-- (DKCandleLayer *)candleLayer {
+- (ENCandleLayer *)candleLayer {
     if (!_candleLayer) {
-        _candleLayer = [DKCandleLayer layer];
+        _candleLayer = [ENCandleLayer layer];
         _candleLayer.zPosition = 0;
         _candleLayer.frame = self.bounds;
         [self.layer addSublayer:_candleLayer];
@@ -91,10 +91,10 @@
 }
 
 #pragma mark -- k线层
-- (DKLineLayer *)lineLayer {
+- (ENLineLayer *)lineLayer {
     
     if (!_lineLayer) {
-        _lineLayer = [DKLineLayer layer];
+        _lineLayer = [ENLineLayer layer];
         _lineLayer.zPosition = 1;
         _lineLayer.frame = self.bounds;
         [self.layer addSublayer:_lineLayer];
@@ -115,9 +115,9 @@
 }
 
 #pragma mark -- 辅助线层
-- (DKFlagLineLayer *)flagLineLayer {
+- (ENFlagLineLayer *)flagLineLayer {
     if (!_flagLineLayer) {
-        _flagLineLayer = [DKFlagLineLayer layer];
+        _flagLineLayer = [ENFlagLineLayer layer];
         _flagLineLayer.zPosition = 3;
         _flagLineLayer.frame = self.bounds;
         [self.layer addSublayer:_flagLineLayer];

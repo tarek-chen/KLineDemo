@@ -1,15 +1,15 @@
 //
-//  DKCandleLayer.m
+//  ENCandleLayer.m
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKCandleLayer.h"
+#import "ENCandleLayer.h"
 #import "CAShapeLayer+kLine.h"
 
-@implementation DKCandleLayer
+@implementation ENCandleLayer
 
 - (void)layoutSublayers {
     [super layoutSublayers];

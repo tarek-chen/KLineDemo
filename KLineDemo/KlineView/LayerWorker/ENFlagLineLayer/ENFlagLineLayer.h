@@ -1,5 +1,5 @@
 //
-//  DKFlagLineLayer.h
+//  ENFlagLineLayer.h
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "KlineStyle.h"
 
-@interface DKFlagLineLayer : CAShapeLayer
+@interface ENFlagLineLayer : CAShapeLayer
 
 @property (nonatomic, strong) NSArray *models;
 

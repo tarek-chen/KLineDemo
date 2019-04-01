@@ -1,5 +1,5 @@
 //
-//  DKLineLayer.h
+//  ENLineLayer.h
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
@@ -10,7 +10,7 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import <UIKit/UIKit.h>
 
-@interface DKLineLayer : CAShapeLayer
+@interface ENLineLayer : CAShapeLayer
 
 @property (nonatomic, strong) NSArray *ma7Points;
 @property (nonatomic, strong) NSArray *ma30Points;

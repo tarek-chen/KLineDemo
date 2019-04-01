@@ -1,5 +1,5 @@
 //
-//  DKCandleLayer.h
+//  ENCandleLayer.h
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "KLineModel.h"
 
-@interface DKCandleLayer : CAShapeLayer
+@interface ENCandleLayer : CAShapeLayer
 
 @property (nonatomic, strong) NSArray *models;
 @property (nonatomic, strong) NSArray *lines;

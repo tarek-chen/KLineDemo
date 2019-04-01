@@ -1,5 +1,5 @@
 //
-//  DKBackgroundLayer.h
+//  ENBackgroundLayer.h
 //  KLineDemo
 //
 //  Created by easy on 2018/6/20.
@@ -9,6 +9,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@interface DKBackgroundLayer : CAShapeLayer
+@interface ENBackgroundLayer : CAShapeLayer
 
 @end

@@ -37,16 +37,14 @@
 		4059132B20CFA80900B090F3 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059132A20CFA80900B090F3 /* KLineModel.m */; };
 		5E09623C224E6B38004395E3 /* NSString+Attributed.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09623B224E6B38004395E3 /* NSString+Attributed.m */; };
 		5E09CDA322520F59008D5722 /* ENPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E09CDA222520F59008D5722 /* ENPanGestureRecognizer.m */; };
-		5E2BFD7C224335FF00C1D7AE /* DKTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD69224335FE00C1D7AE /* DKTextLayer.m */; };
-		5E2BFD7D224335FF00C1D7AE /* DKCandleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD6D224335FE00C1D7AE /* DKCandleLayer.m */; };
+		5E2BFD7C224335FF00C1D7AE /* ENTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD69224335FE00C1D7AE /* ENTextLayer.m */; };
+		5E2BFD7D224335FF00C1D7AE /* ENCandleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD6D224335FE00C1D7AE /* ENCandleLayer.m */; };
 		5E2BFD7E224335FF00C1D7AE /* CAShapeLayer+kLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD70224335FE00C1D7AE /* CAShapeLayer+kLine.m */; };
-		5E2BFD7F224335FF00C1D7AE /* DKBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD73224335FE00C1D7AE /* DKBackgroundLayer.m */; };
-		5E2BFD80224335FF00C1D7AE /* DKFlagLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD75224335FE00C1D7AE /* DKFlagLineLayer.m */; };
-		5E2BFD81224335FF00C1D7AE /* DKLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD79224335FE00C1D7AE /* DKLineLayer.m */; };
-		5E2BFD82224335FF00C1D7AE /* DKLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD7B224335FE00C1D7AE /* DKLineView.m */; };
+		5E2BFD7F224335FF00C1D7AE /* ENBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD73224335FE00C1D7AE /* ENBackgroundLayer.m */; };
+		5E2BFD80224335FF00C1D7AE /* ENFlagLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD75224335FE00C1D7AE /* ENFlagLineLayer.m */; };
+		5E2BFD81224335FF00C1D7AE /* ENLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD79224335FE00C1D7AE /* ENLineLayer.m */; };
+		5E2BFD82224335FF00C1D7AE /* ENChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BFD7B224335FE00C1D7AE /* ENChartView.m */; };
 		5E551D6C223F8C5100A386C1 /* KlineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E551D6B223F8C5100A386C1 /* KlineStyle.m */; };
-		5EA55178224A0A6A00A0633A /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA55174224A0A6A00A0633A /* YYWeakProxy.m */; };
-		5EA55179224A0A6A00A0633A /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA55176224A0A6A00A0633A /* YYFPSLabel.m */; };
 		9631DEB0A6EA1266E8408E02 /* libPods-KLineDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6881B57E22D4D11E462E066 /* libPods-KLineDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -130,26 +128,22 @@
 		5E09623B224E6B38004395E3 /* NSString+Attributed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attributed.m"; sourceTree = "<group>"; };
 		5E09CDA122520F59008D5722 /* ENPanGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENPanGestureRecognizer.h; sourceTree = "<group>"; };
 		5E09CDA222520F59008D5722 /* ENPanGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ENPanGestureRecognizer.m; sourceTree = "<group>"; };
-		5E2BFD69224335FE00C1D7AE /* DKTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKTextLayer.m; sourceTree = "<group>"; };
-		5E2BFD6A224335FE00C1D7AE /* DKTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTextLayer.h; sourceTree = "<group>"; };
-		5E2BFD6C224335FE00C1D7AE /* DKCandleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCandleLayer.h; sourceTree = "<group>"; };
-		5E2BFD6D224335FE00C1D7AE /* DKCandleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCandleLayer.m; sourceTree = "<group>"; };
+		5E2BFD69224335FE00C1D7AE /* ENTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENTextLayer.m; sourceTree = "<group>"; };
+		5E2BFD6A224335FE00C1D7AE /* ENTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENTextLayer.h; sourceTree = "<group>"; };
+		5E2BFD6C224335FE00C1D7AE /* ENCandleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENCandleLayer.h; sourceTree = "<group>"; };
+		5E2BFD6D224335FE00C1D7AE /* ENCandleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENCandleLayer.m; sourceTree = "<group>"; };
 		5E2BFD6F224335FE00C1D7AE /* CAShapeLayer+kLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+kLine.h"; sourceTree = "<group>"; };
 		5E2BFD70224335FE00C1D7AE /* CAShapeLayer+kLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+kLine.m"; sourceTree = "<group>"; };
-		5E2BFD72224335FE00C1D7AE /* DKBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBackgroundLayer.h; sourceTree = "<group>"; };
-		5E2BFD73224335FE00C1D7AE /* DKBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBackgroundLayer.m; sourceTree = "<group>"; };
-		5E2BFD75224335FE00C1D7AE /* DKFlagLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKFlagLineLayer.m; sourceTree = "<group>"; };
-		5E2BFD76224335FE00C1D7AE /* DKFlagLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKFlagLineLayer.h; sourceTree = "<group>"; };
-		5E2BFD78224335FE00C1D7AE /* DKLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLineLayer.h; sourceTree = "<group>"; };
-		5E2BFD79224335FE00C1D7AE /* DKLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLineLayer.m; sourceTree = "<group>"; };
-		5E2BFD7A224335FE00C1D7AE /* DKLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKLineView.h; sourceTree = "<group>"; };
-		5E2BFD7B224335FE00C1D7AE /* DKLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKLineView.m; sourceTree = "<group>"; };
+		5E2BFD72224335FE00C1D7AE /* ENBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENBackgroundLayer.h; sourceTree = "<group>"; };
+		5E2BFD73224335FE00C1D7AE /* ENBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENBackgroundLayer.m; sourceTree = "<group>"; };
+		5E2BFD75224335FE00C1D7AE /* ENFlagLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENFlagLineLayer.m; sourceTree = "<group>"; };
+		5E2BFD76224335FE00C1D7AE /* ENFlagLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENFlagLineLayer.h; sourceTree = "<group>"; };
+		5E2BFD78224335FE00C1D7AE /* ENLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENLineLayer.h; sourceTree = "<group>"; };
+		5E2BFD79224335FE00C1D7AE /* ENLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENLineLayer.m; sourceTree = "<group>"; };
+		5E2BFD7A224335FE00C1D7AE /* ENChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENChartView.h; sourceTree = "<group>"; };
+		5E2BFD7B224335FE00C1D7AE /* ENChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENChartView.m; sourceTree = "<group>"; };
 		5E551D6A223F8C5100A386C1 /* KlineStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlineStyle.h; sourceTree = "<group>"; };
 		5E551D6B223F8C5100A386C1 /* KlineStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlineStyle.m; sourceTree = "<group>"; };
-		5EA55174224A0A6A00A0633A /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
-		5EA55175224A0A6A00A0633A /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
-		5EA55176224A0A6A00A0633A /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
-		5EA55177224A0A6A00A0633A /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		63076432B22A8CB2107CA52B /* Pods-KLineDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLineDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KLineDemo/Pods-KLineDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A6881B57E22D4D11E462E066 /* libPods-KLineDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KLineDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE833CC29FE39E587C312B4 /* Pods-KLineDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLineDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KLineDemo/Pods-KLineDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -207,7 +201,6 @@
 		404035BF20B53B8400FB250D /* KLineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5EA55173224A0A6A00A0633A /* YYFPSLabel */,
 				5E2BFD66224335FE00C1D7AE /* KlineView */,
 				4059132420CFA69F00B090F3 /* NetWorking */,
 				405912F120CFA63A00B090F3 /* AFNetworking */,
@@ -355,8 +348,8 @@
 				5E096239224E6AC5004395E3 /* NSString+Attributed */,
 				5E2BFD67224335FE00C1D7AE /* LayerWorker */,
 				4059132820CFA7FF00B090F3 /* KLineModel */,
-				5E2BFD7A224335FE00C1D7AE /* DKLineView.h */,
-				5E2BFD7B224335FE00C1D7AE /* DKLineView.m */,
+				5E2BFD7A224335FE00C1D7AE /* ENChartView.h */,
+				5E2BFD7B224335FE00C1D7AE /* ENChartView.m */,
 			);
 			path = KlineView;
 			sourceTree = "<group>";
@@ -365,32 +358,32 @@
 			isa = PBXGroup;
 			children = (
 				5E09CDA022520F4A008D5722 /* ENPanGestureRecognizer */,
-				5E2BFD68224335FE00C1D7AE /* DKTextLayer */,
-				5E2BFD6B224335FE00C1D7AE /* DKCandleLayer */,
+				5E2BFD68224335FE00C1D7AE /* ENTextLayer */,
+				5E2BFD6B224335FE00C1D7AE /* ENCandleLayer */,
 				5E2BFD6E224335FE00C1D7AE /* CAShapeLayer+kLine */,
-				5E2BFD71224335FE00C1D7AE /* DKBackgroundLayer */,
-				5E2BFD74224335FE00C1D7AE /* DKFlagLineLayer */,
-				5E2BFD77224335FE00C1D7AE /* DKLineLayer */,
+				5E2BFD71224335FE00C1D7AE /* ENBackgroundLayer */,
+				5E2BFD74224335FE00C1D7AE /* ENFlagLineLayer */,
+				5E2BFD77224335FE00C1D7AE /* ENLineLayer */,
 			);
 			path = LayerWorker;
 			sourceTree = "<group>";
 		};
-		5E2BFD68224335FE00C1D7AE /* DKTextLayer */ = {
+		5E2BFD68224335FE00C1D7AE /* ENTextLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E2BFD6A224335FE00C1D7AE /* DKTextLayer.h */,
-				5E2BFD69224335FE00C1D7AE /* DKTextLayer.m */,
+				5E2BFD6A224335FE00C1D7AE /* ENTextLayer.h */,
+				5E2BFD69224335FE00C1D7AE /* ENTextLayer.m */,
 			);
-			path = DKTextLayer;
+			path = ENTextLayer;
 			sourceTree = "<group>";
 		};
-		5E2BFD6B224335FE00C1D7AE /* DKCandleLayer */ = {
+		5E2BFD6B224335FE00C1D7AE /* ENCandleLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E2BFD6C224335FE00C1D7AE /* DKCandleLayer.h */,
-				5E2BFD6D224335FE00C1D7AE /* DKCandleLayer.m */,
+				5E2BFD6C224335FE00C1D7AE /* ENCandleLayer.h */,
+				5E2BFD6D224335FE00C1D7AE /* ENCandleLayer.m */,
 			);
-			path = DKCandleLayer;
+			path = ENCandleLayer;
 			sourceTree = "<group>";
 		};
 		5E2BFD6E224335FE00C1D7AE /* CAShapeLayer+kLine */ = {
@@ -402,42 +395,31 @@
 			path = "CAShapeLayer+kLine";
 			sourceTree = "<group>";
 		};
-		5E2BFD71224335FE00C1D7AE /* DKBackgroundLayer */ = {
+		5E2BFD71224335FE00C1D7AE /* ENBackgroundLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E2BFD72224335FE00C1D7AE /* DKBackgroundLayer.h */,
-				5E2BFD73224335FE00C1D7AE /* DKBackgroundLayer.m */,
+				5E2BFD72224335FE00C1D7AE /* ENBackgroundLayer.h */,
+				5E2BFD73224335FE00C1D7AE /* ENBackgroundLayer.m */,
 			);
-			path = DKBackgroundLayer;
+			path = ENBackgroundLayer;
 			sourceTree = "<group>";
 		};
-		5E2BFD74224335FE00C1D7AE /* DKFlagLineLayer */ = {
+		5E2BFD74224335FE00C1D7AE /* ENFlagLineLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E2BFD76224335FE00C1D7AE /* DKFlagLineLayer.h */,
-				5E2BFD75224335FE00C1D7AE /* DKFlagLineLayer.m */,
+				5E2BFD76224335FE00C1D7AE /* ENFlagLineLayer.h */,
+				5E2BFD75224335FE00C1D7AE /* ENFlagLineLayer.m */,
 			);
-			path = DKFlagLineLayer;
+			path = ENFlagLineLayer;
 			sourceTree = "<group>";
 		};
-		5E2BFD77224335FE00C1D7AE /* DKLineLayer */ = {
+		5E2BFD77224335FE00C1D7AE /* ENLineLayer */ = {
 			isa = PBXGroup;
 			children = (
-				5E2BFD78224335FE00C1D7AE /* DKLineLayer.h */,
-				5E2BFD79224335FE00C1D7AE /* DKLineLayer.m */,
+				5E2BFD78224335FE00C1D7AE /* ENLineLayer.h */,
+				5E2BFD79224335FE00C1D7AE /* ENLineLayer.m */,
 			);
-			path = DKLineLayer;
-			sourceTree = "<group>";
-		};
-		5EA55173224A0A6A00A0633A /* YYFPSLabel */ = {
-			isa = PBXGroup;
-			children = (
-				5EA55174224A0A6A00A0633A /* YYWeakProxy.m */,
-				5EA55175224A0A6A00A0633A /* YYFPSLabel.h */,
-				5EA55176224A0A6A00A0633A /* YYFPSLabel.m */,
-				5EA55177224A0A6A00A0633A /* YYWeakProxy.h */,
-			);
-			path = YYFPSLabel;
+			path = ENLineLayer;
 			sourceTree = "<group>";
 		};
 		ABBDF2ACC7204F0C18A51495 /* Pods */ = {
@@ -603,17 +585,16 @@
 			files = (
 				404035C520B53B8400FB250D /* ViewController.m in Sources */,
 				4059131F20CFA63A00B090F3 /* AFHTTPSessionManager.m in Sources */,
-				5EA55179224A0A6A00A0633A /* YYFPSLabel.m in Sources */,
 				4059132320CFA63A00B090F3 /* AFSecurityPolicy.m in Sources */,
 				5E09CDA322520F59008D5722 /* ENPanGestureRecognizer.m in Sources */,
 				404035F420B53CC800FB250D /* UIColor+KLineTheme.m in Sources */,
 				4059131B20CFA63A00B090F3 /* UIWebView+AFNetworking.m in Sources */,
 				4059131D20CFA63A00B090F3 /* AFImageDownloader.m in Sources */,
-				5E2BFD7F224335FF00C1D7AE /* DKBackgroundLayer.m in Sources */,
+				5E2BFD7F224335FF00C1D7AE /* ENBackgroundLayer.m in Sources */,
 				5E09623C224E6B38004395E3 /* NSString+Attributed.m in Sources */,
 				5E551D6C223F8C5100A386C1 /* KlineStyle.m in Sources */,
 				4059132020CFA63A00B090F3 /* AFURLSessionManager.m in Sources */,
-				5E2BFD81224335FF00C1D7AE /* DKLineLayer.m in Sources */,
+				5E2BFD81224335FF00C1D7AE /* ENLineLayer.m in Sources */,
 				4059132720CFA69F00B090F3 /* NetWorking.m in Sources */,
 				4059131620CFA63A00B090F3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4059131720CFA63A00B090F3 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -623,17 +604,16 @@
 				40079FB620DB55C700B05A6A /* KLineDataManager.m in Sources */,
 				4059131E20CFA63A00B090F3 /* AFURLResponseSerialization.m in Sources */,
 				4059131520CFA63A00B090F3 /* UIProgressView+AFNetworking.m in Sources */,
-				5E2BFD7C224335FF00C1D7AE /* DKTextLayer.m in Sources */,
+				5E2BFD7C224335FF00C1D7AE /* ENTextLayer.m in Sources */,
 				4059131820CFA63A00B090F3 /* UIImageView+AFNetworking.m in Sources */,
-				5E2BFD82224335FF00C1D7AE /* DKLineView.m in Sources */,
+				5E2BFD82224335FF00C1D7AE /* ENChartView.m in Sources */,
 				4059132B20CFA80900B090F3 /* KLineModel.m in Sources */,
 				404035D020B53B8600FB250D /* main.m in Sources */,
 				5E2BFD7E224335FF00C1D7AE /* CAShapeLayer+kLine.m in Sources */,
 				404035C220B53B8400FB250D /* AppDelegate.m in Sources */,
 				4059131920CFA63A00B090F3 /* UIButton+AFNetworking.m in Sources */,
-				5E2BFD7D224335FF00C1D7AE /* DKCandleLayer.m in Sources */,
-				5EA55178224A0A6A00A0633A /* YYWeakProxy.m in Sources */,
-				5E2BFD80224335FF00C1D7AE /* DKFlagLineLayer.m in Sources */,
+				5E2BFD7D224335FF00C1D7AE /* ENCandleLayer.m in Sources */,
+				5E2BFD80224335FF00C1D7AE /* ENFlagLineLayer.m in Sources */,
 				4059132220CFA63A00B090F3 /* AFNetworkReachabilityManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

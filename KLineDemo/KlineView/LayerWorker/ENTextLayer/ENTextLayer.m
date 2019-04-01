@@ -6,7 +6,7 @@
 //  Copyright © 2018年 easy. All rights reserved.
 //
 
-#import "DKTextLayer.h"
+#import "ENTextLayer.h"
 #import "KLineModel.h"
 #import "CAShapeLayer+kLine.h"
 #import "NSString+Attributed.h"
