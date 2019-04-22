@@ -106,7 +106,7 @@ static KLineDataManager *_manager = nil;
     
     [self getLimitPrice];
     
-    [self getMAPoint];
+    [self getPathPoints];
 }
 
 // 取展示数据
@@ -226,7 +226,7 @@ static KLineDataManager *_manager = nil;
 }
 
 // MA线路径
-- (void)getMAPoint {
+- (void)getPathPoints {
     
     // 调整蜡烛可绘制范围
     CGFloat maxY = _canvasHeight *kTopChartScale - kMainChartMarginBottom;
@@ -349,6 +349,7 @@ static KLineDataManager *_manager = nil;
     _DIFPoints = DIFPoints;
     _DEAPoints = DEAPoints;
     _BARPoints = BARPoints;
+    
     // KDJ
     _KPoints = kPoints;
     _DPoints = dPoints;

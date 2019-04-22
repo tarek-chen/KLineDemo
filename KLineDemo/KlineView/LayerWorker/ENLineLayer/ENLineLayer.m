@@ -107,7 +107,6 @@
 - (void)RSI {
     CAShapeLayer *rsi = [self drawLineWithPoints:_RSIPoints lineWidth:1 lineColor:KlineStyle.style.color_1];
     [self addSublayer:rsi];
-
 }
 
 @end

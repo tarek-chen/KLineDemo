@@ -5,8 +5,7 @@ target 'KLineDemo' do
 
  pod 'SocketRocket'#
  pod 'GZIP'#
- pod 'YYFPSLabel'#
-  # Pods for KLineDemo
+ # Pods for KLineDemo
 
 	
 

@@ -41,7 +41,6 @@
     [self.scrollContentView addSubview:_kLineView];
 
     NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
-    ws = @"wss://ws.dcoin.com/kline-api/ws?platform=1";
     _skt = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
     _skt.delegate = self;
     [_skt open];
@@ -61,7 +60,7 @@
         event = @"sub";
     }
     typeKey = [typeKey stringByAppendingString:@"adausdt"];
-    
+	
     NSMutableDictionary *param = @{@"channel":@"market_adausdt_kline_1min",@"cb_id":typeKey}.mutableCopy;
     if (_skt == webSocket) {
         param[@"top"] = @(600);
@@ -200,6 +199,7 @@
     [[KLineDataManager manager] refreshData];
     [_kLineView draw];
 }
+
 - (IBAction)close:(UIButton *)sender {
     
     [_skt close];
@@ -210,4 +210,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 @end
