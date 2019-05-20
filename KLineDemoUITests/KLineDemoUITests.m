@@ -2,8 +2,8 @@
 //  KLineDemoUITests.m
 //  KLineDemoUITests
 //
-//  Created by easy on 2018/5/23.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/5/23.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

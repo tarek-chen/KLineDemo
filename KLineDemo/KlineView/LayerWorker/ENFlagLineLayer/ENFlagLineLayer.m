@@ -2,8 +2,8 @@
 //  ENFlagLineLayer.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/20.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/20.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "ENFlagLineLayer.h"
@@ -64,6 +64,7 @@ static CGFloat kFlagLineWidth = .3f;
 
     if (_flagIndex != index && index < _models.count) {
         KLineModel *model = _models[index];
+
         // 横线
         CGFloat horPositionY = model.candleY;
         //  红跌蜡烛取maxY

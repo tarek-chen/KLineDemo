@@ -2,8 +2,8 @@
 //  ENChartView.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/11.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/11.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "ENChartView.h"
@@ -141,7 +141,11 @@
     
     CGPoint point= [ges locationInView:self];
     NSInteger idx = (point.x - kChartBorderWidth) / (KlineStyle.style.candle_w + kCandleSpacing);
-    
+	
+	// 选中
+	if ([self.delegate respondsToSelector:@selector(chartView:didSelectedAtIndex:)]) {
+		[self.delegate chartView:self didSelectedAtIndex:idx];
+	}
     if (ges.state == UIGestureRecognizerStateBegan) {
         [_textLayer showTitleInfoAtIndex:idx];
         [_flagLineLayer showFlagLineAtIndex:idx];
@@ -149,8 +153,13 @@
         [_textLayer showTitleInfoAtIndex:idx];
         [_flagLineLayer showFlagLineAtIndex:idx];
     } else if (UIGestureRecognizerStateEnded == ges.state || ges.state == UIGestureRecognizerStateCancelled || ges.state == UIGestureRecognizerStateFailed) {
-        [_flagLineLayer didmiss];
+		
+		[_flagLineLayer didmiss];
         [_textLayer infoDismiss];
+		// 反选
+		if ([self.delegate respondsToSelector:@selector(chartView:didDeSelectedAtIndex:)]) {
+			[self.delegate chartView:self didDeSelectedAtIndex:idx];
+		}
     }
 }
 
@@ -246,7 +255,7 @@
                 [_dis invalidate];
                 _dis = nil;
             }
-        
+        // 惯性滑动
             _velocity = [panGest velocityInView:self];
             CGFloat magnitude = sqrtf(_velocity.x * _velocity.x);
             CGFloat slideMult = magnitude / 200;
@@ -303,9 +312,11 @@
     // 指标画线
     self.lineLayer.ma7Points = data.MA7Points;
     _lineLayer.ma30Points = data.MA30Points;
+	_lineLayer.ma99Points = data.MA99Points;
     // EMA
     _lineLayer.ema7Points = data.EMA7Points;
     _lineLayer.ema30Points = data.EMA30Points;
+	_lineLayer.ema99Points = data.EMA99Points;
     // BOLL
     _lineLayer.BOLLPoints = data.BollPoints;
     _lineLayer.UBPoints = data.UBPoints;

@@ -2,8 +2,8 @@
 //  KLineDataManager.h
 //  KLineDemo
 //
-//  Created by easy on 2018/6/21.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/21.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -35,9 +35,11 @@
 // MA
 @property (nonatomic, strong) NSMutableArray *MA7Points;
 @property (nonatomic, strong) NSMutableArray *MA30Points;
+@property (nonatomic, strong) NSMutableArray *MA99Points;
 // EMA
 @property (nonatomic, strong) NSMutableArray *EMA7Points;
 @property (nonatomic, strong) NSMutableArray *EMA30Points;
+@property (nonatomic, strong) NSMutableArray *EMA99Points;
 // BOLL
 @property (nonatomic, strong) NSMutableArray *BollPoints;
 @property (nonatomic, strong) NSMutableArray *UBPoints;

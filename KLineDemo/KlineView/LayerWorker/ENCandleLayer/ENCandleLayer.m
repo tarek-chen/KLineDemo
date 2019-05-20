@@ -2,8 +2,8 @@
 //  ENCandleLayer.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/20.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/20.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "ENCandleLayer.h"
@@ -68,7 +68,7 @@
     CAShapeLayer *candleLayer = [self drawCandleWithFrame:frame color:candleColor];
     [self addSublayer:candleLayer];
     // 影线
-    CAShapeLayer *lineLayer = [self drawLineFromPoint:obj.lineTop toPoint:obj.lineBottom lineWidth:1 color:candleColor];
+    CAShapeLayer *lineLayer = [self drawLineFromPoint:obj.lineTop toPoint:obj.lineBottom lineWidth:kChartLineWidth color:candleColor];
     [self addSublayer:lineLayer];
 }
 

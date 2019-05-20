@@ -3,7 +3,7 @@
 //  KLineDemo
 //
 //  Created by E on 2019/3/29.
-//  Copyright © 2019 easy. All rights reserved.
+//  Copyright © 2019 chen. All rights reserved.
 //
 
 #import "NSString+Attributed.h"

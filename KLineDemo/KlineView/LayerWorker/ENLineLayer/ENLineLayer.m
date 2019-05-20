@@ -2,8 +2,8 @@
 //  ENLineLayer.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/20.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/20.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "ENLineLayer.h"
@@ -53,6 +53,9 @@
     [self addSublayer:MA7Line];
     CAShapeLayer *MA30Line = [self drawLineWithPoints:_ma30Points lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:MA30Line];
+	CAShapeLayer *MA99Line = [self drawLineWithPoints:_ma99Points lineWidth:1 lineColor:kLineColor3];
+	[self addSublayer:MA99Line];
+
     
 }
 - (void)EMA {
@@ -60,6 +63,8 @@
     [self addSublayer:ema7];
     CAShapeLayer *ema30 = [self drawLineWithPoints:_ema30Points lineWidth:1 lineColor:kLineColor2];
     [self addSublayer:ema30];
+	CAShapeLayer *ema99 = [self drawLineWithPoints:_ema99Points lineWidth:1 lineColor:kLineColor3];
+	[self addSublayer:ema99];
 
 }
 - (void)BOLL {

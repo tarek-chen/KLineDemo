@@ -2,8 +2,8 @@
 //  ENLineLayer.h
 //  KLineDemo
 //
-//  Created by easy on 2018/6/20.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/20.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 //  图表中所有的线型图都在这里绘制
 
@@ -14,8 +14,10 @@
 
 @property (nonatomic, strong) NSArray *ma7Points;
 @property (nonatomic, strong) NSArray *ma30Points;
+@property (nonatomic, strong) NSArray *ma99Points;
 @property (nonatomic, strong) NSArray *ema7Points;
 @property (nonatomic, strong) NSArray *ema30Points;
+@property (nonatomic, strong) NSArray *ema99Points;
 
 // BOLL
 @property (nonatomic, strong) NSArray *BOLLPoints;

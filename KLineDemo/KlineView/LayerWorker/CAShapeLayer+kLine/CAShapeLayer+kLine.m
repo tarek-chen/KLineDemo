@@ -2,8 +2,8 @@
 //  CAShapeLayer+kLine.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/20.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/20.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "CAShapeLayer+kLine.h"
@@ -75,7 +75,7 @@
     
     [self setLineJoin:kCALineJoinRound];
     [self setLineDashPattern:
-     [NSArray arrayWithObjects:[NSNumber numberWithInt:10], [NSNumber numberWithInt:5], nil]];
+     [NSArray arrayWithObjects:[NSNumber numberWithInt:8], [NSNumber numberWithInt:6], nil]];
 }
 
 #pragma mark - 文字

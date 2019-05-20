@@ -2,8 +2,8 @@
 //  KLineDataManager.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/21.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/21.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "KLineDataManager.h"
@@ -74,7 +74,8 @@ static KLineDataManager *_manager = nil;
     [model setEMA:7 index:idx models:_data];
     [model setEMA:30 index:idx models:_data];
     [model setEMA:12 index:idx models:_data];
-    [model setEMA:26 index:idx models:_data];
+	[model setEMA:26 index:idx models:_data];
+	[model setEMA:99 index:idx models:_data];
     [model setBOLL:20 k:2 index:idx models:_data];
     [model setKDJ:9 p2:3 p3:3 index:idx models:_data];
 //    [model setKDJ:14 p2:1 p3:3 index:idx models:self.data];
@@ -160,6 +161,10 @@ static KLineDataManager *_manager = nil;
             minPrice = MIN(minPrice, model.MA30);
             maxPrice = MAX(maxPrice, model.MA30);
         }
+		if (model.MA99) {
+			minPrice = MIN(minPrice, model.MA99);
+			maxPrice = MAX(maxPrice, model.MA99);
+		}
         
         minVol = MIN(minVol, model.vol.floatValue);
         maxVol = MAX(maxVol, model.vol.floatValue);
@@ -169,11 +174,14 @@ static KLineDataManager *_manager = nil;
             minPrice = MIN(minPrice, model.EMA7);
             maxPrice = MAX(maxPrice, model.EMA7);
         }
-        if (model.EMA30) {
-            
-            minPrice = MIN(minPrice, model.EMA30);
-            maxPrice = MAX(maxPrice, model.EMA30);
-        }
+		if (model.EMA30) {
+			minPrice = MIN(minPrice, model.EMA30);
+			maxPrice = MAX(maxPrice, model.EMA30);
+		}
+		if (model.EMA99) {
+			minPrice = MIN(minPrice, model.EMA99);
+			maxPrice = MAX(maxPrice, model.EMA99);
+		}
         // BOLL
         if ([self.data indexOfObject:model] >18) {
             boll_min = MIN(boll_min, model.DB);
@@ -233,10 +241,12 @@ static KLineDataManager *_manager = nil;
     CGFloat unitDistance = (_maxPrice - _minPrice) / (maxY - kMainChartMarginTop);
     CGFloat candle_half = KlineStyle.style.candle_w/2;
     __block NSMutableArray *MA7Points = @[].mutableCopy;
-    __block NSMutableArray *MA30Points = @[].mutableCopy;
-    
+	__block NSMutableArray *MA30Points = @[].mutableCopy;
+	__block NSMutableArray *MA99Points = @[].mutableCopy;
+
     __block NSMutableArray *EMA7Points = @[].mutableCopy;
-    __block NSMutableArray *EMA30Points = @[].mutableCopy;
+	__block NSMutableArray *EMA30Points = @[].mutableCopy;
+	__block NSMutableArray *EMA99Points = @[].mutableCopy;
     // BOLL
     __block NSMutableArray *BOLL = @[].mutableCopy;
     __block NSMutableArray *UB = @[].mutableCopy;
@@ -281,6 +291,10 @@ static KLineDataManager *_manager = nil;
             CGFloat MA30Y = [self mainChartYWithMaxY:maxY value:obj.MA30 min:self.minPrice unit:unitDistance];
             [MA30Points addObject:@(CGPointMake(pointX, MA30Y))];
         }
+		if (obj.MA99) {
+			CGFloat MA99Y = [self mainChartYWithMaxY:maxY value:obj.MA99 min:self.minPrice unit:unitDistance];
+			[MA99Points addObject:@(CGPointMake(pointX, MA99Y))];
+		}
         
         // vol
         obj.volHeight = obj.vol.floatValue / unit_vol;
@@ -294,6 +308,11 @@ static KLineDataManager *_manager = nil;
             CGFloat EMA30Y = [self mainChartYWithMaxY:maxY value:obj.EMA30 min:self.minPrice unit:unitDistance];
             [EMA30Points addObject:@(CGPointMake(pointX, EMA30Y))];
         }
+		if (obj.EMA99) {
+			CGFloat EMA99Y = [self mainChartYWithMaxY:maxY value:obj.EMA99 min:self.minPrice unit:unitDistance];
+			[EMA99Points addObject:@(CGPointMake(pointX, EMA99Y))];
+		}
+		
         // BOLL
         if ([self.data indexOfObject:obj] >18 && isBOLL) {
             CGFloat boll = [self mainChartYWithMaxY:maxY value:obj.BOLL min:self.minPrice unit:unitDistance];
@@ -336,10 +355,12 @@ static KLineDataManager *_manager = nil;
     
     _MA7Points = MA7Points;
     _MA30Points = MA30Points;
-    
+	_MA99Points = MA99Points;
+	
     _EMA7Points = EMA7Points;
     _EMA30Points = EMA30Points;
-
+	_EMA99Points = EMA99Points;
+	
     // BOLL
     _BollPoints = BOLL;
     _UBPoints = UB;

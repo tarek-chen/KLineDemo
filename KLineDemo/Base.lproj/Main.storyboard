@@ -80,14 +80,48 @@
                                                     <action selector="bottomChart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vxK-vF-QC8"/>
                                                 </connections>
                                             </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-mN-AdL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIc-sw-W3d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFn-hb-GAA">
+                                                        <rect key="frame" x="94" y="0.0" width="93.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-eM-u0d">
+                                                        <rect key="frame" x="187.5" y="0.0" width="94" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCu-8j-ZGF">
+                                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="HhO-do-Mri"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="tJM-k3-BJj" firstAttribute="top" secondItem="sqN-d8-KqN" secondAttribute="bottom" constant="20" id="0I2-3B-cEl"/>
                                             <constraint firstItem="cek-1K-fBO" firstAttribute="centerY" secondItem="tJM-k3-BJj" secondAttribute="centerY" id="2dd-gq-aoI"/>
+                                            <constraint firstItem="HbI-mN-AdL" firstAttribute="leading" secondItem="3ne-9B-MFM" secondAttribute="leading" id="4wE-hI-2e2"/>
                                             <constraint firstItem="gZK-nU-M2L" firstAttribute="centerY" secondItem="vHA-RA-Vso" secondAttribute="centerY" id="4xQ-zd-WuL"/>
                                             <constraint firstItem="3f3-33-TjI" firstAttribute="leading" secondItem="tJM-k3-BJj" secondAttribute="leading" id="8Oy-UY-GUc"/>
                                             <constraint firstItem="vHA-RA-Vso" firstAttribute="leading" secondItem="Hfs-ED-JKs" secondAttribute="trailing" constant="12" id="DBd-N4-1rb"/>
+                                            <constraint firstItem="HbI-mN-AdL" firstAttribute="top" secondItem="3ne-9B-MFM" secondAttribute="top" id="KWF-vn-2gY"/>
                                             <constraint firstItem="vHA-RA-Vso" firstAttribute="centerY" secondItem="Hfs-ED-JKs" secondAttribute="centerY" id="OwL-yq-Dpr"/>
                                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="trailing" constant="14" id="WAX-fv-0Od"/>
                                             <constraint firstAttribute="height" constant="1000" id="cnE-i4-TDE"/>
@@ -95,6 +129,7 @@
                                             <constraint firstItem="cek-1K-fBO" firstAttribute="leading" secondItem="tJM-k3-BJj" secondAttribute="trailing" constant="8" id="g5h-9b-Cm7"/>
                                             <constraint firstItem="3f3-33-TjI" firstAttribute="top" secondItem="tJM-k3-BJj" secondAttribute="bottom" constant="20" id="jrb-yn-Iet"/>
                                             <constraint firstItem="sqN-d8-KqN" firstAttribute="leading" secondItem="3ne-9B-MFM" secondAttribute="leading" constant="80" id="lff-cb-wd4"/>
+                                            <constraint firstAttribute="trailing" secondItem="HbI-mN-AdL" secondAttribute="trailing" id="qxw-ij-agQ"/>
                                             <constraint firstItem="tJM-k3-BJj" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="leading" id="tM0-L8-ctD"/>
                                             <constraint firstItem="gZK-nU-M2L" firstAttribute="leading" secondItem="vHA-RA-Vso" secondAttribute="trailing" constant="16" id="xNn-Co-lgw"/>
                                             <constraint firstItem="sqN-d8-KqN" firstAttribute="top" secondItem="3ne-9B-MFM" secondAttribute="top" constant="470" id="zfQ-EH-aJr"/>
@@ -136,6 +171,7 @@
                     <connections>
                         <outlet property="scrollContentView" destination="3ne-9B-MFM" id="W77-qw-Q4Y"/>
                         <outlet property="scrollView" destination="nTS-kp-ERb" id="yWx-ON-2KU"/>
+                        <outlet property="stack" destination="HbI-mN-AdL" id="fBz-mj-9Db"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

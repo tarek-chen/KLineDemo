@@ -2,8 +2,8 @@
 //  ViewController.m
 //  KLineDemo
 //
-//  Created by easy on 2018/5/23.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/5/23.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -15,12 +15,13 @@
 #import "KLineModel.h"
 #import "KLineDataManager.h"
 
-@interface ViewController ()<SRWebSocketDelegate>
+@interface ViewController ()<SRWebSocketDelegate, ENChartViewDelegate>
 @property (nonatomic, strong) ENChartView *kLineView;
 @property (nonatomic, strong) SRWebSocket *skt;
 @property (nonatomic, strong) SRWebSocket *skt_now;
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 @property (weak, nonatomic) IBOutlet UIView *scrollView;
+@property (weak, nonatomic) IBOutlet UIStackView *stack;
 
 @end
 
@@ -39,15 +40,58 @@
     _kLineView.backgroundColor = UIColor.blackColor;
     _kLineView.frame = CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, 300);
     [self.scrollContentView addSubview:_kLineView];
+	_kLineView.delegate = self;
+	
+//	[self getQ];
+	[self getRecord];
+	
+//    NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
+//    _skt = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
+//    _skt.delegate = self;
+//    [_skt open];
+//
+//    _skt_now = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
+//    _skt_now.delegate = self;
+	
+}
 
-    NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
-    _skt = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
-    _skt.delegate = self;
-    [_skt open];
-    
-    _skt_now = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
-    _skt_now.delegate = self;
-    
+
+#pragma mark - DcoinAPI
+- (void)getRecord {
+	NSString *path = @"https://openapi.dcoin.com/open/api/get_records";
+	NSDictionary *param = @{@"symbol": @"adausdt", @"period": @"60min", @"size": @"300"};
+//	symbol	string	true	市场标记，例：btcusdt
+//	period	string	true	k线时间刻度，见下
+//	size	int	false  100
+	[NetWorking requestWithApi:path param:param.mutableCopy thenSuccess:^(NSDictionary *responseObject) {
+		NSArray *dataArray = responseObject[@"data"];
+		if (dataArray.count >0) {
+			NSMutableArray *tempData = @[].mutableCopy;
+			// model转化
+			for (NSDictionary *info in dataArray) {
+				KLineModel *model = [KLineModel modelWithDict:info];
+				[tempData addObject:model];
+			}
+			[self reDraw:tempData];
+		}
+	} fail:^{
+		NSLog(@"");
+	}];
+	
+}
+
+- (void)chartView:(ENChartView *)chart didSelectedAtIndex:(NSInteger)index {
+
+	KLineModel *model = [KLineDataManager manager].needDraw[index];
+	// 开、高、低、收、幅、量、时间
+	UILabel *open = _stack.subviews.firstObject;
+	open.text = [NSString stringWithFormat:@"O: %@", model.open];
+	UILabel *high = _stack.subviews[1];
+	high.text = [NSString stringWithFormat:@"H: %@", model.high];
+	UILabel *low = _stack.subviews[2];
+	low.text = [NSString stringWithFormat:@"L: %@", model.low];
+	UILabel *close = _stack.subviews.lastObject;
+	close.text = [NSString stringWithFormat:@"C: %@", model.close];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
@@ -107,7 +151,7 @@
             KLineModel *model = [KLineModel modelWithDict:info];
             [tempData addObject:model];
         }
-        [self reDraw:tempData offset:0];
+        [self reDraw:tempData];
         
         // 刷新
         if (_skt == webSocket) {
@@ -137,7 +181,7 @@
     NSLog(@"Fails");
 }
 
-- (void)reDraw:(NSMutableArray *)data offset:(NSInteger)offset {
+- (void)reDraw:(NSMutableArray *)data {
     
     KLineDataManager *manager = [KLineDataManager manager];
     // 必须先记录尺寸
@@ -206,6 +250,27 @@
     [_skt_now close];
 }
 
+#pragma mark - EIREN
+- (void)getQ {
+	NSString *path = @"https://www.eirenex.net/d_api/quotation/kline";
+	NSDictionary *params = @{@"Contract" : @"btcusdt", @"Cycle":@"1H"};
+	
+	[NetWorking requestWithApi:path param:params.mutableCopy thenSuccess:^(NSDictionary *responseObject) {
+		NSMutableArray *temp = @[].mutableCopy;
+		if ([responseObject[@"status"] boolValue]) {
+			NSArray *datas = responseObject[@"data"];
+			datas = [[datas reverseObjectEnumerator] allObjects];
+			
+			for (NSDictionary *info in datas) {
+				KLineModel *model = [KLineModel modelWithDict:info];
+				[temp addObject:model];
+			}
+			[self reDraw:temp];
+		}
+	} fail:^{
+		NSLog(@"W");
+	}];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

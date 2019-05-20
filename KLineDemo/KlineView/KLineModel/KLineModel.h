@@ -2,8 +2,8 @@
 //  KLineModel.h
 //  KLineDemo
 //
-//  Created by easy on 2018/6/12.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/12.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -44,21 +44,12 @@
 @property (nonatomic, assign) CGFloat MA25;
 @property (nonatomic, assign) CGFloat MA30;
 @property (nonatomic, assign) CGFloat MA99;
-@property (nonatomic, assign) CGFloat MAV5;
-@property (nonatomic, assign) CGFloat MAV7;
-@property (nonatomic, assign) CGFloat MAV20;
-@property (nonatomic, assign) CGFloat MAV25;
-@property (nonatomic, assign) CGFloat MAV30;
-@property (nonatomic, assign) CGFloat MAV99;
 // EMA
 @property (nonatomic, assign) CGFloat EMA7;
 @property (nonatomic, assign) CGFloat EMA12;
 @property (nonatomic, assign) CGFloat EMA26;
 @property (nonatomic, assign) CGFloat EMA30;
-@property (nonatomic, assign) CGFloat EMV7;
-@property (nonatomic, assign) CGFloat EMV12;
-@property (nonatomic, assign) CGFloat EMV26;
-@property (nonatomic, assign) CGFloat EMV30;
+@property (nonatomic, assign) CGFloat EMA99;
 // BOLL
 @property (nonatomic, assign) CGFloat BOLL;
 @property (nonatomic, assign) CGFloat UB;

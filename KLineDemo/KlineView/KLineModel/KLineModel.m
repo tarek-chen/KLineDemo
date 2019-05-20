@@ -2,8 +2,8 @@
 //  KLineModel.m
 //  KLineDemo
 //
-//  Created by easy on 2018/6/12.
-//  Copyright © 2018年 easy. All rights reserved.
+//  Created by chen on 2018/6/12.
+//  Copyright © 2018年 chen. All rights reserved.
 //
 
 #import "KLineModel.h"
@@ -111,62 +111,65 @@
 
 // MA算法
 - (void)setMA:(NSInteger)num index:(NSInteger)index models:(NSArray <KLineModel *>*)models {
-    
+	if (num -1 > index) {
+		return;
+	}
     CGFloat MA, MAVol;
     CGFloat sumClose = 0;
-    CGFloat sumVol = 0;
+//    CGFloat sumVol = 0;
     if (index +1 >= num) {
         //index + 1 >= N，累计N天内的
         for (NSInteger i = 0; i < num; i++) {
-            sumVol += models[index - i].vol.floatValue;
+//            sumVol += models[index - i].vol.floatValue;
             sumClose += models[index - i].close.floatValue;
         }
         MA = sumClose / num;
-        MAVol = sumVol / num;
+//        MAVol = sumVol / num;
     } else {
         
         for (NSInteger i = index; i >=0; i--) {
-            sumVol += models[i].vol.floatValue;
+//            sumVol += models[i].vol.floatValue;
             sumClose += models[i].close.floatValue;
         }
         MA = sumClose / (index + 1);
-        MAVol = sumVol / (index + 1);
+//        MAVol = sumVol / (index + 1);
     }
     
     [self setMA:num value:MA];
-    [self setMAVol:num value:MA];
+//    [self setMAVol:num value:MA];
 }
 
 // EMA
 - (void)setEMA:(NSInteger)num index:(NSInteger)index models:(NSArray <KLineModel *>*)models {
-    // EM价、量的key
+	
+	// EM价、量的key
     NSString *key_ema = [NSString stringWithFormat:@"EMA%ld", (long)num];
-    NSString *key_emv = [NSString stringWithFormat:@"EMV%ld", (long)num];
-    
-    CGFloat ema_price = 0;
-    CGFloat ema_vol = 0;
-    CGFloat c = _close.floatValue;
-    CGFloat v = _vol.floatValue;
-        
-    CGFloat prev_ema_price = 0;
-    CGFloat prev_ema_vol = 0;
+	CGFloat ema_price = 0;
+	CGFloat c = _close.floatValue;
+	CGFloat prev_ema_price = 0;
+	
+	//    NSString *key_emv = [NSString stringWithFormat:@"EMV%ld", (long)num];
+	//    CGFloat ema_vol = 0;
+	//    CGFloat v = _vol.floatValue;
+	//    CGFloat prev_ema_vol = 0;
+	
     if (index >0) {
         prev_ema_price = [[models[index -1] valueForKey:key_ema] floatValue];
-        prev_ema_vol = [[models[index -1] valueForKey:key_emv] floatValue];
+//        prev_ema_vol = [[models[index -1] valueForKey:key_emv] floatValue];
     }
     
     //EMA（N）=2/（N+1）*（C-昨日EMA）+昨日EMA；
     if (index > 0) {
         //EMA（N）=2/（N+1）*（C-昨日EMA）+昨日EMA；
         ema_price = prev_ema_price + (c - prev_ema_price) * 2 / (num + 1);
-        ema_vol = prev_ema_vol + (v - prev_ema_vol) * 2 / (num + 1);
+//        ema_vol = prev_ema_vol + (v - prev_ema_vol) * 2 / (num + 1);
     } else {
         ema_price = c;
-        ema_vol = v;
+//        ema_vol = v;
     }
     
     [self setValue:@(ema_price) forKey:key_ema];
-    [self setValue:@(ema_vol) forKey:key_emv];
+//    [self setValue:@(ema_vol) forKey:key_emv];
 
 }
 
