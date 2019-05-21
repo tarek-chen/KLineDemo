@@ -21,13 +21,15 @@
 
 @implementation DKTextLayer
 
-static CGFloat kLabelHeight = 15;
+static CGFloat kLabelHeight = 14;
 
 - (void)draw {
     
     __block CGFloat bottomY = CGFLOAT_MIN;
     __block CGFloat topY = CGFLOAT_MAX;
     __block KLineModel *topModel, *bottomModel;
+	NSInteger unit = _models.count/5;
+	NSInteger lastIndex = _models.count-1;
     [_models enumerateObjectsUsingBlock:^(KLineModel * _Nonnull model, NSUInteger idx, BOOL * _Nonnull stop) {
         if (model.lineTop.y <topY) {
             topY = model.lineTop.y;
@@ -37,6 +39,14 @@ static CGFloat kLabelHeight = 15;
             bottomY = model.lineBottom.y;
             bottomModel = model;
         }
+		if (idx == 0) {
+			[self drawDateWithModel:model isLeft:YES isRight:NO];
+		} else if (idx == lastIndex) {
+			[self drawDateWithModel:model isLeft:NO isRight:YES];
+		} else if (idx % unit == 0) {
+			[self drawDateWithModel:model isLeft:NO isRight:NO];
+		}
+		
     }];
     
     if (topModel && !isLine) {
@@ -44,6 +54,28 @@ static CGFloat kLabelHeight = 15;
         [self drawLimitTextForModel:topModel isMax:YES];
         [self drawLimitTextForModel:bottomModel isMax:NO];
     }
+}
+
+// 时间线
+- (void)drawDateWithModel:(KLineModel *)model isLeft:(BOOL)isLeft isRight:(BOOL)isRight {
+	CGFloat font = 8;
+	NSString *time = [model.ID candleDate];
+	CGFloat labelY = CGRectGetHeight(self.frame) *kTopChartScale + 4;
+	CGFloat labelX = 0;
+	CGFloat width = UIScreen.mainScreen.bounds.size.width;
+	CATextLayerAlignmentMode mode = kCAAlignmentCenter;
+	if (isLeft) {
+		mode = kCAAlignmentLeft;
+	}
+	else if (isRight) {
+		mode = kCAAlignmentRight;
+	} else {
+		width = [time textWidthWithHeight:10 andFont:font];
+		labelX = model.candleX - width/2;
+	}
+	CGRect frm = CGRectMake(labelX, labelY, width, 10);
+	CATextLayer *date = [self getTextLayerWithString:time textColor:UIColor.whiteColor fontSize:font backgroundColor:UIColor.clearColor frame:frm aligmentMode:mode];
+	[self addSublayer:date];
 }
 
 // 极值价格
@@ -66,7 +98,7 @@ static CGFloat kLabelHeight = 15;
         originY -= kLabelHeight;
     }
     CGRect frame = CGRectMake(originX, originY, labelWidth, kLabelHeight);
-    CATextLayer *priceLayer = [self getTextLayerWithString:text textColor:[UIColor whiteColor] fontSize:10 backgroundColor:[UIColor clearColor] frame:frame aligmentMode:aligment];
+    CATextLayer *priceLayer = [self getTextLayerWithString:text textColor:[UIColor whiteColor] fontSize:12 backgroundColor:[UIColor clearColor] frame:frame aligmentMode:aligment];
     [self addSublayer:priceLayer];
 }
 
@@ -84,10 +116,10 @@ static CGFloat kLabelHeight = 15;
     // 主图表
     NSString *mainTitle;
     if (isMA) {
-        mainTitle = [NSString stringWithFormat:@"MA(7):%.6f, MA(30):%.6f", model.MA7, model.MA30];
+        mainTitle = [NSString stringWithFormat:@"MA(7):%.6f, MA(30):%.6f, MA(99):%.6f", model.MA7, model.MA30, model.MA99];
     }
     else if (isEMA) {
-        mainTitle = [NSString stringWithFormat:@"EMA(7):%.6f,EMA(30):%.6f", model.EMA7, model.EMA30];
+        mainTitle = [NSString stringWithFormat:@"EMA(7):%.6f,EMA(30):%.6f,EMA(99):%.6f", model.EMA7, model.EMA30, model.EMA99];
     }
     else if (isBOLL) {
         mainTitle = [NSString stringWithFormat:@"BOLL:%.6f, UB:%.6f, LB:%.6f", model.BOLL, model.UB, model.DB];
@@ -98,13 +130,13 @@ static CGFloat kLabelHeight = 15;
     // 副
     NSString *subTitle;
     if (isMACD) {
-        subTitle = [NSString stringWithFormat:@"MACD:%.6f, DIF:%.6f, DEA:%.6f", model.MACD, model.DIF, model.DEA];
+        subTitle = [NSString stringWithFormat:@"MACD(12,26,9),MACD:%.6f,DIF:%.6f,DEA:%.6f", model.MACD, model.DIF, model.DEA];
     }
     else if (isKDJ) {
         subTitle = [NSString stringWithFormat:@"K:%.2f, D:%.2f, J:%.2f", model.K, model.D, model.J];
     }
     else if (isRSI) {
-        subTitle = [NSString stringWithFormat:@"RSI(12):%.6f", model.RSI];
+        subTitle = [NSString stringWithFormat:@"RSI(6, 12, 24):%.6f, %.6f, %.6f", model.rsi6, model.rsi12, model.rsi24];
     }
     else if (isVOL) {
         subTitle = [NSString stringWithFormat:@"VOL:%@", model.volText];
@@ -172,16 +204,31 @@ static CGFloat kLabelHeight = 15;
     NSArray *subStr = [str componentsSeparatedByString:@","];
     
     NSMutableAttributedString *attStr = str.attributed;
-    [attStr cat_ColorText:@[subStr.firstObject] color:KlineStyle.style.color_1];
-    if (subStr.count >1) {
-        [attStr cat_ColorText:@[subStr[1]] color:KlineStyle.style.color_2];
-    }
-    if (subStr.count >2) {
-        [attStr cat_ColorText:@[subStr[2]] color:KlineStyle.style.color_3];
-    }
+	
+	if (isMACD && subStr.count ==4) {
+		[attStr cat_ColorText:@[subStr.firstObject] color:UIColor.whiteColor];
+		[attStr cat_ColorText:@[subStr[0]] color:KlineStyle.style.color_1];
+		[attStr cat_ColorText:@[subStr[1]] color:KlineStyle.style.color_2];
+		[attStr cat_ColorText:@[subStr[3]] color:KlineStyle.style.color_3];
+	}
+	else {
+		[attStr cat_ColorText:@[subStr.firstObject] color:KlineStyle.style.color_1];
+		if (subStr.count >1) {
+			[attStr cat_ColorText:@[subStr[1]] color:KlineStyle.style.color_2];
+		}
+		if (subStr.count >2) {
+			[attStr cat_ColorText:@[subStr[2]] color:KlineStyle.style.color_3];
+		}
+		
+		if (isRSI && subStr.count >=6) {
+			[attStr cat_ColorText:@[subStr[3]] color:KlineStyle.style.color_1];
+			[attStr cat_ColorText:@[subStr[4]] color:KlineStyle.style.color_2];
+			[attStr cat_ColorText:@[subStr[5]] color:KlineStyle.style.color_3];
+		}
+	}
     // 关闭隐式动画
     [CATransaction begin];
-    [CATransaction setDisableActions:YES];
+    [CATransaction setDisableActions:NO];
     layer.string = attStr;
     [CATransaction commit];
 }

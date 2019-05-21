@@ -56,6 +56,14 @@
     return ma;
 }
 
+- (CGFloat)getRSI:(NSInteger)num {
+	MAKey(@"rsi", num)
+	CGFloat rsi = [[self valueForKey:key_ma] floatValue];
+	return rsi;
+}
+
+
+
 // 量
 - (NSString *)volText {
     
@@ -273,7 +281,8 @@
     if (idx < num -1) {
         rsi = defaultVal;
     }
-    _RSI = rsi;
+	MAKey(@"rsi", num);
+	[self setValue:@(rsi) forKey:key_ma];
 }
 
 

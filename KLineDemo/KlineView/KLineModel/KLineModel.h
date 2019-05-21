@@ -65,7 +65,9 @@
 @property (nonatomic, assign) CGFloat D;
 @property (nonatomic, assign) CGFloat J;
 // RSI
-@property (nonatomic, assign) CGFloat RSI;
+@property (nonatomic, assign) CGFloat rsi6;
+@property (nonatomic, assign) CGFloat rsi12;
+@property (nonatomic, assign) CGFloat rsi24;
 
 + (instancetype)modelWithDict:(NSDictionary *)dict;
 

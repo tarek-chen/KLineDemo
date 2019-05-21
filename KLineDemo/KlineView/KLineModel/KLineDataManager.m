@@ -80,7 +80,9 @@ static KLineDataManager *_manager = nil;
     [model setKDJ:9 p2:3 p3:3 index:idx models:_data];
 //    [model setKDJ:14 p2:1 p3:3 index:idx models:self.data];
     [model setMACD:12 p2:26 p3:9 idx:idx models:_data];
-    [model setRSI:12 idx:idx models:_data];
+	[model setRSI:6 idx:idx models:_data];
+	[model setRSI:12 idx:idx models:_data];
+	[model setRSI:24 idx:idx models:_data];
 }
 
 - (void)addNewData:(KLineModel *)model {
@@ -207,8 +209,12 @@ static KLineDataManager *_manager = nil;
         kdj_max = MAX(kdj_max, model.J);
         
         // RSI
-        rsi_min = MIN(rsi_min, model.RSI);
-        rsi_max = MAX(rsi_max, model.RSI);
+		rsi_min = MIN(rsi_min, model.rsi6);
+		rsi_max = MAX(rsi_max, model.rsi6);
+		rsi_min = MIN(rsi_min, model.rsi12);
+		rsi_max = MAX(rsi_max, model.rsi12);
+		rsi_min = MIN(rsi_min, model.rsi24);
+		rsi_max = MAX(rsi_max, model.rsi24);
     }];
     _maxPrice = maxPrice;
     _minPrice = minPrice;
@@ -270,7 +276,9 @@ static KLineDataManager *_manager = nil;
     
     // RSI
     CGFloat unit_rsi = fabs(_rsi_max - _rsi_min) / subChart_h;
-    __block NSMutableArray *rsiPoints = @[].mutableCopy;
+	__block NSMutableArray *rsi6 = @[].mutableCopy;
+	__block NSMutableArray *rsi12 = @[].mutableCopy;
+	__block NSMutableArray *rsi24 = @[].mutableCopy;
     // line
     __block NSMutableArray *line = @[].mutableCopy;
 
@@ -347,8 +355,12 @@ static KLineDataManager *_manager = nil;
         [jPoints addObject:@(CGPointMake(pointX, pointY_j))];
         
         // RSI
-        CGFloat pointY_rsi = [self bottomChartY:obj.RSI min:self.rsi_min unit:unit_rsi];
-        [rsiPoints addObject:@(CGPointMake(pointX, pointY_rsi))];
+        CGFloat rsi6Y = [self bottomChartY:obj.rsi6 min:self.rsi_min unit:unit_rsi];
+        [rsi6 addObject:@(CGPointMake(pointX, rsi6Y))];
+		CGFloat rsi12Y = [self bottomChartY:obj.rsi12 min:self.rsi_min unit:unit_rsi];
+		[rsi12 addObject:@(CGPointMake(pointX, rsi12Y))];
+		CGFloat rsi24Y = [self bottomChartY:obj.rsi24 min:self.rsi_min unit:unit_rsi];
+		[rsi24 addObject:@(CGPointMake(pointX, rsi24Y))];
     }];
     
     _linePoints = line;
@@ -376,7 +388,9 @@ static KLineDataManager *_manager = nil;
     _DPoints = dPoints;
     _JPoints = jPoints;
     
-    _RSIPoints = rsiPoints;
+	_rsi6 = rsi6;
+	_rsi12 = rsi12;
+	_rsi24 = rsi24;
 }
 
 - (CGFloat)mainChartYWithMaxY:(CGFloat)maxY value:(CGFloat)value min:(CGFloat)min unit:(CGFloat)unit {

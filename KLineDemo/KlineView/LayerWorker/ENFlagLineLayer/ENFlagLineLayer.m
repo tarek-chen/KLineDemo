@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "KLineModel.h"
 #import "CAShapeLayer+kLine.h"
+#import "NSString+Attributed.h"
 
 @interface ENFlagLineLayer()
 
@@ -75,7 +76,7 @@ static CGFloat kFlagLineWidth = .3f;
         
         // 左侧标记收盘价格
         NSString *closeText = [NSString stringWithFormat:@"%.4f", model.close.floatValue];
-        CGFloat textWidth = [self textWidthWithHeight:15 andFont:12 text:closeText];
+        CGFloat textWidth = [closeText textWidthWithHeight:15 andFont:12];
 
         // 关闭隐式动画
         [CATransaction begin];
@@ -103,12 +104,5 @@ static CGFloat kFlagLineWidth = .3f;
     _lineHorizontal.hidden = YES;
     _flagCloseLayer.hidden = YES;
 }
-
-- (CGFloat)textWidthWithHeight:(CGFloat)height andFont:(CGFloat)font text:(NSString *)text {
-    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:font]};
-    CGSize size = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, height)  options:(NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin)   attributes:attribute context:nil].size;
-    return size.width;
-}
-
 
 @end

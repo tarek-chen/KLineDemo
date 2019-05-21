@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Attributed)
 - (NSMutableAttributedString *)attributed;
+- (CGFloat)textWidthWithHeight:(CGFloat)height andFont:(CGFloat)font;
+- (NSString *)candleDate;
 
 @end
 

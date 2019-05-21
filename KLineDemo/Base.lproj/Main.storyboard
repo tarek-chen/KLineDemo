@@ -112,6 +112,27 @@
                                                     <constraint firstAttribute="height" constant="30" id="HhO-do-Mri"/>
                                                 </constraints>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="N8u-OW-xkL">
+                                                <rect key="frame" x="0.0" y="30" width="200" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60F-jI-iz3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Hs-EW-Th5">
+                                                        <rect key="frame" x="100" y="0.0" width="100" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="NwM-ed-tV8"/>
+                                                    <constraint firstAttribute="width" constant="200" id="arb-mC-7QD"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -120,9 +141,11 @@
                                             <constraint firstItem="HbI-mN-AdL" firstAttribute="leading" secondItem="3ne-9B-MFM" secondAttribute="leading" id="4wE-hI-2e2"/>
                                             <constraint firstItem="gZK-nU-M2L" firstAttribute="centerY" secondItem="vHA-RA-Vso" secondAttribute="centerY" id="4xQ-zd-WuL"/>
                                             <constraint firstItem="3f3-33-TjI" firstAttribute="leading" secondItem="tJM-k3-BJj" secondAttribute="leading" id="8Oy-UY-GUc"/>
+                                            <constraint firstItem="N8u-OW-xkL" firstAttribute="top" secondItem="HbI-mN-AdL" secondAttribute="bottom" id="Bvv-Gi-8di"/>
                                             <constraint firstItem="vHA-RA-Vso" firstAttribute="leading" secondItem="Hfs-ED-JKs" secondAttribute="trailing" constant="12" id="DBd-N4-1rb"/>
                                             <constraint firstItem="HbI-mN-AdL" firstAttribute="top" secondItem="3ne-9B-MFM" secondAttribute="top" id="KWF-vn-2gY"/>
                                             <constraint firstItem="vHA-RA-Vso" firstAttribute="centerY" secondItem="Hfs-ED-JKs" secondAttribute="centerY" id="OwL-yq-Dpr"/>
+                                            <constraint firstItem="N8u-OW-xkL" firstAttribute="leading" secondItem="3ne-9B-MFM" secondAttribute="leading" id="SXt-Li-gwa"/>
                                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="leading" secondItem="sqN-d8-KqN" secondAttribute="trailing" constant="14" id="WAX-fv-0Od"/>
                                             <constraint firstAttribute="height" constant="1000" id="cnE-i4-TDE"/>
                                             <constraint firstItem="Hfs-ED-JKs" firstAttribute="centerY" secondItem="sqN-d8-KqN" secondAttribute="centerY" id="dGB-a8-Evi"/>
@@ -172,6 +195,7 @@
                         <outlet property="scrollContentView" destination="3ne-9B-MFM" id="W77-qw-Q4Y"/>
                         <outlet property="scrollView" destination="nTS-kp-ERb" id="yWx-ON-2KU"/>
                         <outlet property="stack" destination="HbI-mN-AdL" id="fBz-mj-9Db"/>
+                        <outlet property="volStack" destination="N8u-OW-xkL" id="sgy-ML-AAt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

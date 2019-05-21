@@ -15,6 +15,28 @@
     return [[NSMutableAttributedString alloc]initWithString:self];
 }
 
+- (NSString *)candleDate {
+	return [self cat_timeFromeTimesTamp:@"MM-dd HH:mm"];
+}
+
+/// yyyy-MM-dd HH:mm:ss
+- (NSString *)cat_timeFromeTimesTamp:(NSString *)format {
+	NSTimeInterval time = [self doubleValue];
+	NSDate *detaildate = [NSDate dateWithTimeIntervalSince1970:time];
+	//实例化一个NSDateFormatter对象
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+	//设定时间格式,这里可以设置成自己需要的格式
+	[dateFormatter setDateFormat:format];
+	NSString *currentDateStr = [dateFormatter stringFromDate:detaildate];
+	return currentDateStr;
+}
+
+- (CGFloat)textWidthWithHeight:(CGFloat)height andFont:(CGFloat)font {
+	NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:font]};
+	CGSize size = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, height)  options:(NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin)   attributes:attribute context:nil].size;
+	return size.width;
+}
+
 @end
 
 @implementation NSMutableAttributedString (Expand)

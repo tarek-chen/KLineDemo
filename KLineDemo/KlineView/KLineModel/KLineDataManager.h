@@ -59,8 +59,9 @@
 // RSI
 @property (nonatomic, assign) CGFloat rsi_min;
 @property (nonatomic, assign) CGFloat rsi_max;
-@property (nonatomic, strong) NSMutableArray *RSIPoints;
-
+@property (nonatomic, strong) NSMutableArray *rsi6;
+@property (nonatomic, strong) NSMutableArray *rsi12;
+@property (nonatomic, strong) NSMutableArray *rsi24;
 
 
 + (instancetype)manager;

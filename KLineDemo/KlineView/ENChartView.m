@@ -271,7 +271,7 @@
 -(void)updateView {
     
     _currentCount++;
-    if (_currentCount>_updateCount || _currentCount>60) {
+    if (_currentCount > _updateCount || _currentCount>60) {
         
         //        dis.paused = YES;
         [_dis removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
@@ -280,7 +280,7 @@
         _currentCount = 0;
         _updateCount = 0;
     }else{
-        CGPoint point = CGPointMake(_velocity.x/20/_currentCount, 0);
+        CGPoint point = CGPointMake(_velocity.x/16/_currentCount, 0);
         _total += point.x;
         NSInteger count = _total / (KlineStyle.style.candle_w * KlineStyle.style.scale);
         if (count != 0) {
@@ -310,27 +310,6 @@
     [_candleLayer draw];
     
     // 指标画线
-    self.lineLayer.ma7Points = data.MA7Points;
-    _lineLayer.ma30Points = data.MA30Points;
-	_lineLayer.ma99Points = data.MA99Points;
-    // EMA
-    _lineLayer.ema7Points = data.EMA7Points;
-    _lineLayer.ema30Points = data.EMA30Points;
-	_lineLayer.ema99Points = data.EMA99Points;
-    // BOLL
-    _lineLayer.BOLLPoints = data.BollPoints;
-    _lineLayer.UBPoints = data.UBPoints;
-    _lineLayer.DBPoints = data.DBPoints;
-    // MACD
-    _lineLayer.DIFPoints = data.DIFPoints;
-    _lineLayer.DEAPoints = data.DEAPoints;
-    _lineLayer.BARPoints = data.BARPoints;
-    // KDJ
-    _lineLayer.KPoints = data.KPoints;
-    _lineLayer.DPoints = data.DPoints;
-    _lineLayer.JPoints = data.JPoints;
-    
-    _lineLayer.RSIPoints = data.RSIPoints;
     [self.lineLayer drawLines];
     
     // 高低价文字

@@ -14,6 +14,7 @@
 #import "GZIP.h"
 #import "KLineModel.h"
 #import "KLineDataManager.h"
+#import "NSString+Attributed.h"
 
 @interface ViewController ()<SRWebSocketDelegate, ENChartViewDelegate>
 @property (nonatomic, strong) ENChartView *kLineView;
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 @property (weak, nonatomic) IBOutlet UIView *scrollView;
 @property (weak, nonatomic) IBOutlet UIStackView *stack;
+@property (weak, nonatomic) IBOutlet UIStackView *volStack;
 
 @end
 
@@ -92,6 +94,12 @@
 	low.text = [NSString stringWithFormat:@"L: %@", model.low];
 	UILabel *close = _stack.subviews.lastObject;
 	close.text = [NSString stringWithFormat:@"C: %@", model.close];
+	
+	// vol
+	UILabel *time = _volStack.subviews.lastObject;
+	time.text = [NSString stringWithFormat:@"Date: %@", model.ID.candleDate];
+	UILabel *vol = _volStack.subviews.firstObject;
+	vol.text = [NSString stringWithFormat:@"Vol: %@", model.vol];
 }
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
