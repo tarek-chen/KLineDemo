@@ -11,7 +11,7 @@
 @implementation KLineDataManager
 
 static KLineDataManager *_manager = nil;
-+ (instancetype)manager {
++ (instancetype)shared {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _manager = [KLineDataManager new];

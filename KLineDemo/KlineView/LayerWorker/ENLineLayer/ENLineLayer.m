@@ -13,7 +13,7 @@
 
 @implementation ENLineLayer
 
-#define _data KLineDataManager.manager
+#define _data KLineDataManager.shared
 
 
 - (void)drawLines {
@@ -81,7 +81,7 @@
 - (void)MACD {
     CGFloat candle_w = KlineStyle.style.candle_w *KlineStyle.style.scale;
     for (NSInteger i = 0; i < _data.BARPoints.count; i++) {
-        KLineModel *model = KLineDataManager.manager.needDraw[i];
+        KLineModel *model = KLineDataManager.shared.needDraw[i];
         //        CGFloat halfCandleW = KlineStyle.style.candle_w/2;
         CGFloat pointX = model.candleX + candle_w/2;
         CGPoint barPoint = [_data.BARPoints[i] CGPointValue];

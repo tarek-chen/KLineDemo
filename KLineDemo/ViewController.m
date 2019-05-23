@@ -84,7 +84,7 @@
 
 - (void)chartView:(ENChartView *)chart didSelectedAtIndex:(NSInteger)index {
 
-	KLineModel *model = [KLineDataManager manager].needDraw[index];
+	KLineModel *model = KLineDataManager.shared.needDraw[index];
 	// 开、高、低、收、幅、量、时间
 	UILabel *open = _stack.subviews.firstObject;
 	open.text = [NSString stringWithFormat:@"O: %@", model.open];
@@ -180,7 +180,7 @@
         // 新推数据
 
         KLineModel *model = [KLineModel modelWithDict:dic[@"tick"]];
-        [[KLineDataManager manager] addNewData:model];
+        [KLineDataManager.shared addNewData:model];
         [_kLineView draw];
     }
 }
@@ -191,7 +191,7 @@
 
 - (void)reDraw:(NSMutableArray *)data {
     
-    KLineDataManager *manager = [KLineDataManager manager];
+    KLineDataManager *manager = KLineDataManager.shared;
     // 必须先记录尺寸
     manager.canvasHeight = CGRectGetHeight(_kLineView.frame);
     manager.canvasWidth = CGRectGetWidth(_kLineView.frame);
@@ -222,7 +222,7 @@
             break;
     }
     if (isBOLL || BOLLChanged) {
-        [[KLineDataManager manager] refreshData];
+        [KLineDataManager.shared refreshData];
     }
     [_kLineView draw];
 }
@@ -248,7 +248,7 @@
         default:
             break;
     }
-    [[KLineDataManager manager] refreshData];
+    [KLineDataManager.shared refreshData];
     [_kLineView draw];
 }
 

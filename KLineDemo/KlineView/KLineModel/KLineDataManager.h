@@ -64,7 +64,7 @@
 @property (nonatomic, strong) NSMutableArray *rsi24;
 
 
-+ (instancetype)manager;
++ (instancetype)shared;
 - (void)refreshData;
 - (void)addNewData:(KLineModel *)model;
 // 取出显示数据

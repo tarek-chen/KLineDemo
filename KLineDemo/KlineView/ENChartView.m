@@ -199,7 +199,7 @@
 
             if (count %2 == 0 && count > 0) {
                 // 3.刷新显示位置
-                KLineDataManager *manager = KLineDataManager.manager;
+                KLineDataManager *manager = KLineDataManager.shared;
                 NSInteger idx = manager.showIndex + manager.showCount - count;
                 if (idx <0) {
                     idx = 0;
@@ -243,7 +243,7 @@
         if (_dragCount != count && count != 0) {
             
             // count < 0, 手指向左滑动
-            [KLineDataManager manager].showIndex -= count;
+            KLineDataManager.shared.showIndex -= count;
 
             [self draw];
             _dragCount = count;
@@ -286,7 +286,7 @@
         if (count != 0) {
             
             // count < 0, 手指向左滑动
-            [KLineDataManager manager].showIndex -= count;
+            KLineDataManager.shared.showIndex -= count;
             
             [self draw];
             _dragCount = count;
@@ -301,7 +301,7 @@
 
     [self resetLayers];
     
-    KLineDataManager *data = [KLineDataManager manager];
+    KLineDataManager *data = KLineDataManager.shared;
     
     // 蜡烛
     self.candleLayer.models = data.needDraw;
