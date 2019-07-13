@@ -44,7 +44,6 @@
     [self.scrollContentView addSubview:_kLineView];
 	_kLineView.delegate = self;
 	
-//	[self getQ];
 	[self getRecord];
 	
 //    NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
@@ -256,28 +255,6 @@
     
     [_skt close];
     [_skt_now close];
-}
-
-#pragma mark - EIREN
-- (void)getQ {
-	NSString *path = @"https://www.eirenex.net/d_api/quotation/kline";
-	NSDictionary *params = @{@"Contract" : @"btcusdt", @"Cycle":@"1H"};
-	
-	[NetWorking requestWithApi:path param:params.mutableCopy thenSuccess:^(NSDictionary *responseObject) {
-		NSMutableArray *temp = @[].mutableCopy;
-		if ([responseObject[@"status"] boolValue]) {
-			NSArray *datas = responseObject[@"data"];
-			datas = [[datas reverseObjectEnumerator] allObjects];
-			
-			for (NSDictionary *info in datas) {
-				KLineModel *model = [KLineModel modelWithDict:info];
-				[temp addObject:model];
-			}
-			[self reDraw:temp];
-		}
-	} fail:^{
-		NSLog(@"W");
-	}];
 }
 
 - (void)didReceiveMemoryWarning {
