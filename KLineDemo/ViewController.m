@@ -46,10 +46,11 @@
 	
 	[self getRecord];
 	
-//    NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
-//    _skt = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
-//    _skt.delegate = self;
-//    [_skt open];
+    NSString *ws = @"wss://ws.dcoin.com/kline-api/ws";
+    ws = @"wss://api.huobi.co/ws";
+    _skt = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
+    _skt.delegate = self;
+    [_skt open];
 //
 //    _skt_now = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:ws]]];
 //    _skt_now.delegate = self;
