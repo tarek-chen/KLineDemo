@@ -32,19 +32,19 @@
 		4059132220CFA63A00B090F3 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059131220CFA63A00B090F3 /* AFNetworkReachabilityManager.m */; };
 		4059132320CFA63A00B090F3 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059131320CFA63A00B090F3 /* AFSecurityPolicy.m */; };
 		4059132720CFA69F00B090F3 /* NetWorking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4059132520CFA69F00B090F3 /* NetWorking.m */; };
-		4D22C17422E09ACF00926FD9 /* UIColor+KLineTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C15122E09ACF00926FD9 /* UIColor+KLineTheme.m */; };
-		4D22C17522E09ACF00926FD9 /* NSString+Attributed.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C15422E09ACF00926FD9 /* NSString+Attributed.m */; };
-		4D22C17622E09ACF00926FD9 /* CAShapeLayer+kLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C15822E09ACF00926FD9 /* CAShapeLayer+kLine.m */; };
-		4D22C17722E09ACF00926FD9 /* ENPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C15A22E09ACF00926FD9 /* ENPanGestureRecognizer.m */; };
-		4D22C17822E09ACF00926FD9 /* ENLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C15D22E09ACF00926FD9 /* ENLineLayer.m */; };
-		4D22C17922E09ACF00926FD9 /* ENCandleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16122E09ACF00926FD9 /* ENCandleLayer.m */; };
-		4D22C17A22E09ACF00926FD9 /* ENTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16422E09ACF00926FD9 /* ENTextLayer.m */; };
-		4D22C17B22E09ACF00926FD9 /* ENFlagLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16622E09ACF00926FD9 /* ENFlagLineLayer.m */; };
-		4D22C17C22E09ACF00926FD9 /* ENBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16A22E09ACF00926FD9 /* ENBackgroundLayer.m */; };
-		4D22C17D22E09ACF00926FD9 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16E22E09ACF00926FD9 /* KLineModel.m */; };
-		4D22C17E22E09ACF00926FD9 /* KLineDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C16F22E09ACF00926FD9 /* KLineDataManager.m */; };
-		4D22C17F22E09ACF00926FD9 /* KlineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C17122E09ACF00926FD9 /* KlineStyle.m */; };
-		4D22C18022E09ACF00926FD9 /* ENChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D22C17322E09ACF00926FD9 /* ENChartView.m */; };
+		4D076CAF22E3F9FF003040E6 /* UIColor+KLineTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C8C22E3F9FF003040E6 /* UIColor+KLineTheme.m */; };
+		4D076CB022E3F9FF003040E6 /* NSString+Attributed.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C8F22E3F9FF003040E6 /* NSString+Attributed.m */; };
+		4D076CB122E3F9FF003040E6 /* CAShapeLayer+kLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C9322E3F9FF003040E6 /* CAShapeLayer+kLine.m */; };
+		4D076CB222E3F9FF003040E6 /* ENPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C9522E3F9FF003040E6 /* ENPanGestureRecognizer.m */; };
+		4D076CB322E3F9FF003040E6 /* ENLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C9822E3F9FF003040E6 /* ENLineLayer.m */; };
+		4D076CB422E3F9FF003040E6 /* ENCandleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C9C22E3F9FF003040E6 /* ENCandleLayer.m */; };
+		4D076CB522E3F9FF003040E6 /* ENTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076C9F22E3F9FF003040E6 /* ENTextLayer.m */; };
+		4D076CB622E3F9FF003040E6 /* ENFlagLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CA122E3F9FF003040E6 /* ENFlagLineLayer.m */; };
+		4D076CB722E3F9FF003040E6 /* ENBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CA522E3F9FF003040E6 /* ENBackgroundLayer.m */; };
+		4D076CB822E3F9FF003040E6 /* KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CA922E3F9FF003040E6 /* KLineModel.m */; };
+		4D076CB922E3F9FF003040E6 /* KLineDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CAA22E3F9FF003040E6 /* KLineDataManager.m */; };
+		4D076CBA22E3F9FF003040E6 /* KlineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CAC22E3F9FF003040E6 /* KlineStyle.m */; };
+		4D076CBB22E3F9FF003040E6 /* ENChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D076CAE22E3F9FF003040E6 /* ENChartView.m */; };
 		9631DEB0A6EA1266E8408E02 /* libPods-KLineDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6881B57E22D4D11E462E066 /* libPods-KLineDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -118,32 +118,32 @@
 		4059131420CFA63A00B090F3 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		4059132520CFA69F00B090F3 /* NetWorking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorking.m; sourceTree = "<group>"; };
 		4059132620CFA69F00B090F3 /* NetWorking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorking.h; sourceTree = "<group>"; };
-		4D22C15022E09ACF00926FD9 /* UIColor+KLineTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+KLineTheme.h"; sourceTree = "<group>"; };
-		4D22C15122E09ACF00926FD9 /* UIColor+KLineTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KLineTheme.m"; sourceTree = "<group>"; };
-		4D22C15322E09ACF00926FD9 /* NSString+Attributed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Attributed.h"; sourceTree = "<group>"; };
-		4D22C15422E09ACF00926FD9 /* NSString+Attributed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attributed.m"; sourceTree = "<group>"; };
-		4D22C15722E09ACF00926FD9 /* CAShapeLayer+kLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+kLine.h"; sourceTree = "<group>"; };
-		4D22C15822E09ACF00926FD9 /* CAShapeLayer+kLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+kLine.m"; sourceTree = "<group>"; };
-		4D22C15A22E09ACF00926FD9 /* ENPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENPanGestureRecognizer.m; sourceTree = "<group>"; };
-		4D22C15B22E09ACF00926FD9 /* ENPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENPanGestureRecognizer.h; sourceTree = "<group>"; };
-		4D22C15D22E09ACF00926FD9 /* ENLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENLineLayer.m; sourceTree = "<group>"; };
-		4D22C15E22E09ACF00926FD9 /* ENLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENLineLayer.h; sourceTree = "<group>"; };
-		4D22C16022E09ACF00926FD9 /* ENCandleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENCandleLayer.h; sourceTree = "<group>"; };
-		4D22C16122E09ACF00926FD9 /* ENCandleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENCandleLayer.m; sourceTree = "<group>"; };
-		4D22C16322E09ACF00926FD9 /* ENTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENTextLayer.h; sourceTree = "<group>"; };
-		4D22C16422E09ACF00926FD9 /* ENTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENTextLayer.m; sourceTree = "<group>"; };
-		4D22C16622E09ACF00926FD9 /* ENFlagLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENFlagLineLayer.m; sourceTree = "<group>"; };
-		4D22C16722E09ACF00926FD9 /* ENFlagLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENFlagLineLayer.h; sourceTree = "<group>"; };
-		4D22C16922E09ACF00926FD9 /* ENBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENBackgroundLayer.h; sourceTree = "<group>"; };
-		4D22C16A22E09ACF00926FD9 /* ENBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENBackgroundLayer.m; sourceTree = "<group>"; };
-		4D22C16B22E09ACF00926FD9 /* ENChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENChartView.h; sourceTree = "<group>"; };
-		4D22C16D22E09ACF00926FD9 /* KlineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlineStyle.h; sourceTree = "<group>"; };
-		4D22C16E22E09ACF00926FD9 /* KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLineModel.m; sourceTree = "<group>"; };
-		4D22C16F22E09ACF00926FD9 /* KLineDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLineDataManager.m; sourceTree = "<group>"; };
-		4D22C17022E09ACF00926FD9 /* KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
-		4D22C17122E09ACF00926FD9 /* KlineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlineStyle.m; sourceTree = "<group>"; };
-		4D22C17222E09ACF00926FD9 /* KLineDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLineDataManager.h; sourceTree = "<group>"; };
-		4D22C17322E09ACF00926FD9 /* ENChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENChartView.m; sourceTree = "<group>"; };
+		4D076C8B22E3F9FF003040E6 /* UIColor+KLineTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+KLineTheme.h"; sourceTree = "<group>"; };
+		4D076C8C22E3F9FF003040E6 /* UIColor+KLineTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+KLineTheme.m"; sourceTree = "<group>"; };
+		4D076C8E22E3F9FF003040E6 /* NSString+Attributed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Attributed.h"; sourceTree = "<group>"; };
+		4D076C8F22E3F9FF003040E6 /* NSString+Attributed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Attributed.m"; sourceTree = "<group>"; };
+		4D076C9222E3F9FF003040E6 /* CAShapeLayer+kLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+kLine.h"; sourceTree = "<group>"; };
+		4D076C9322E3F9FF003040E6 /* CAShapeLayer+kLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+kLine.m"; sourceTree = "<group>"; };
+		4D076C9522E3F9FF003040E6 /* ENPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENPanGestureRecognizer.m; sourceTree = "<group>"; };
+		4D076C9622E3F9FF003040E6 /* ENPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENPanGestureRecognizer.h; sourceTree = "<group>"; };
+		4D076C9822E3F9FF003040E6 /* ENLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENLineLayer.m; sourceTree = "<group>"; };
+		4D076C9922E3F9FF003040E6 /* ENLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENLineLayer.h; sourceTree = "<group>"; };
+		4D076C9B22E3F9FF003040E6 /* ENCandleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENCandleLayer.h; sourceTree = "<group>"; };
+		4D076C9C22E3F9FF003040E6 /* ENCandleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENCandleLayer.m; sourceTree = "<group>"; };
+		4D076C9E22E3F9FF003040E6 /* ENTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENTextLayer.h; sourceTree = "<group>"; };
+		4D076C9F22E3F9FF003040E6 /* ENTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENTextLayer.m; sourceTree = "<group>"; };
+		4D076CA122E3F9FF003040E6 /* ENFlagLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENFlagLineLayer.m; sourceTree = "<group>"; };
+		4D076CA222E3F9FF003040E6 /* ENFlagLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENFlagLineLayer.h; sourceTree = "<group>"; };
+		4D076CA422E3F9FF003040E6 /* ENBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENBackgroundLayer.h; sourceTree = "<group>"; };
+		4D076CA522E3F9FF003040E6 /* ENBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENBackgroundLayer.m; sourceTree = "<group>"; };
+		4D076CA622E3F9FF003040E6 /* ENChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ENChartView.h; sourceTree = "<group>"; };
+		4D076CA822E3F9FF003040E6 /* KlineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KlineStyle.h; sourceTree = "<group>"; };
+		4D076CA922E3F9FF003040E6 /* KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLineModel.m; sourceTree = "<group>"; };
+		4D076CAA22E3F9FF003040E6 /* KLineDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLineDataManager.m; sourceTree = "<group>"; };
+		4D076CAB22E3F9FF003040E6 /* KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLineModel.h; sourceTree = "<group>"; };
+		4D076CAC22E3F9FF003040E6 /* KlineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KlineStyle.m; sourceTree = "<group>"; };
+		4D076CAD22E3F9FF003040E6 /* KLineDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLineDataManager.h; sourceTree = "<group>"; };
+		4D076CAE22E3F9FF003040E6 /* ENChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ENChartView.m; sourceTree = "<group>"; };
 		63076432B22A8CB2107CA52B /* Pods-KLineDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLineDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KLineDemo/Pods-KLineDemo.release.xcconfig"; sourceTree = "<group>"; };
 		A6881B57E22D4D11E462E066 /* libPods-KLineDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KLineDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE833CC29FE39E587C312B4 /* Pods-KLineDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KLineDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KLineDemo/Pods-KLineDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		404035BF20B53B8400FB250D /* KLineDemo */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C14D22E09ACF00926FD9 /* KlineView */,
+				4D076C8822E3F9FF003040E6 /* KlineView */,
 				4059132420CFA69F00B090F3 /* NetWorking */,
 				405912F120CFA63A00B090F3 /* AFNetworking */,
 				404035C020B53B8400FB250D /* AppDelegate.h */,
@@ -300,132 +300,131 @@
 			path = NetWorking;
 			sourceTree = "<group>";
 		};
-		4D22C14D22E09ACF00926FD9 /* KlineView */ = {
+		4D076C8822E3F9FF003040E6 /* KlineView */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C14E22E09ACF00926FD9 /* Category */,
-				4D22C15522E09ACF00926FD9 /* LayerWorker */,
-				4D22C16B22E09ACF00926FD9 /* ENChartView.h */,
-				4D22C16C22E09ACF00926FD9 /* KLineModel */,
-				4D22C17322E09ACF00926FD9 /* ENChartView.m */,
+				4D076C8922E3F9FF003040E6 /* Category */,
+				4D076C9022E3F9FF003040E6 /* LayerWorker */,
+				4D076CA622E3F9FF003040E6 /* ENChartView.h */,
+				4D076CA722E3F9FF003040E6 /* KLineModel */,
+				4D076CAE22E3F9FF003040E6 /* ENChartView.m */,
 			);
-			name = KlineView;
-			path = "../../../Downloads/EirenSwift-master/EirenEx/EirenEx/Common/Custom/KlineView";
+			path = KlineView;
 			sourceTree = "<group>";
 		};
-		4D22C14E22E09ACF00926FD9 /* Category */ = {
+		4D076C8922E3F9FF003040E6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C14F22E09ACF00926FD9 /* UIColor+KLineTheme */,
-				4D22C15222E09ACF00926FD9 /* NSString+Attributed */,
+				4D076C8A22E3F9FF003040E6 /* UIColor+KLineTheme */,
+				4D076C8D22E3F9FF003040E6 /* NSString+Attributed */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		4D22C14F22E09ACF00926FD9 /* UIColor+KLineTheme */ = {
+		4D076C8A22E3F9FF003040E6 /* UIColor+KLineTheme */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15022E09ACF00926FD9 /* UIColor+KLineTheme.h */,
-				4D22C15122E09ACF00926FD9 /* UIColor+KLineTheme.m */,
+				4D076C8B22E3F9FF003040E6 /* UIColor+KLineTheme.h */,
+				4D076C8C22E3F9FF003040E6 /* UIColor+KLineTheme.m */,
 			);
 			path = "UIColor+KLineTheme";
 			sourceTree = "<group>";
 		};
-		4D22C15222E09ACF00926FD9 /* NSString+Attributed */ = {
+		4D076C8D22E3F9FF003040E6 /* NSString+Attributed */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15322E09ACF00926FD9 /* NSString+Attributed.h */,
-				4D22C15422E09ACF00926FD9 /* NSString+Attributed.m */,
+				4D076C8E22E3F9FF003040E6 /* NSString+Attributed.h */,
+				4D076C8F22E3F9FF003040E6 /* NSString+Attributed.m */,
 			);
 			path = "NSString+Attributed";
 			sourceTree = "<group>";
 		};
-		4D22C15522E09ACF00926FD9 /* LayerWorker */ = {
+		4D076C9022E3F9FF003040E6 /* LayerWorker */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15622E09ACF00926FD9 /* CAShapeLayer+kLine */,
-				4D22C15922E09ACF00926FD9 /* ENPanGestureRecognizer */,
-				4D22C15C22E09ACF00926FD9 /* ENLineLayer */,
-				4D22C15F22E09ACF00926FD9 /* ENCandleLayer */,
-				4D22C16222E09ACF00926FD9 /* ENTextLayer */,
-				4D22C16522E09ACF00926FD9 /* ENFlagLineLayer */,
-				4D22C16822E09ACF00926FD9 /* ENBackgroundLayer */,
+				4D076C9122E3F9FF003040E6 /* CAShapeLayer+kLine */,
+				4D076C9422E3F9FF003040E6 /* ENPanGestureRecognizer */,
+				4D076C9722E3F9FF003040E6 /* ENLineLayer */,
+				4D076C9A22E3F9FF003040E6 /* ENCandleLayer */,
+				4D076C9D22E3F9FF003040E6 /* ENTextLayer */,
+				4D076CA022E3F9FF003040E6 /* ENFlagLineLayer */,
+				4D076CA322E3F9FF003040E6 /* ENBackgroundLayer */,
 			);
 			path = LayerWorker;
 			sourceTree = "<group>";
 		};
-		4D22C15622E09ACF00926FD9 /* CAShapeLayer+kLine */ = {
+		4D076C9122E3F9FF003040E6 /* CAShapeLayer+kLine */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15722E09ACF00926FD9 /* CAShapeLayer+kLine.h */,
-				4D22C15822E09ACF00926FD9 /* CAShapeLayer+kLine.m */,
+				4D076C9222E3F9FF003040E6 /* CAShapeLayer+kLine.h */,
+				4D076C9322E3F9FF003040E6 /* CAShapeLayer+kLine.m */,
 			);
 			path = "CAShapeLayer+kLine";
 			sourceTree = "<group>";
 		};
-		4D22C15922E09ACF00926FD9 /* ENPanGestureRecognizer */ = {
+		4D076C9422E3F9FF003040E6 /* ENPanGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15A22E09ACF00926FD9 /* ENPanGestureRecognizer.m */,
-				4D22C15B22E09ACF00926FD9 /* ENPanGestureRecognizer.h */,
+				4D076C9522E3F9FF003040E6 /* ENPanGestureRecognizer.m */,
+				4D076C9622E3F9FF003040E6 /* ENPanGestureRecognizer.h */,
 			);
 			path = ENPanGestureRecognizer;
 			sourceTree = "<group>";
 		};
-		4D22C15C22E09ACF00926FD9 /* ENLineLayer */ = {
+		4D076C9722E3F9FF003040E6 /* ENLineLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C15D22E09ACF00926FD9 /* ENLineLayer.m */,
-				4D22C15E22E09ACF00926FD9 /* ENLineLayer.h */,
+				4D076C9822E3F9FF003040E6 /* ENLineLayer.m */,
+				4D076C9922E3F9FF003040E6 /* ENLineLayer.h */,
 			);
 			path = ENLineLayer;
 			sourceTree = "<group>";
 		};
-		4D22C15F22E09ACF00926FD9 /* ENCandleLayer */ = {
+		4D076C9A22E3F9FF003040E6 /* ENCandleLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C16022E09ACF00926FD9 /* ENCandleLayer.h */,
-				4D22C16122E09ACF00926FD9 /* ENCandleLayer.m */,
+				4D076C9B22E3F9FF003040E6 /* ENCandleLayer.h */,
+				4D076C9C22E3F9FF003040E6 /* ENCandleLayer.m */,
 			);
 			path = ENCandleLayer;
 			sourceTree = "<group>";
 		};
-		4D22C16222E09ACF00926FD9 /* ENTextLayer */ = {
+		4D076C9D22E3F9FF003040E6 /* ENTextLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C16322E09ACF00926FD9 /* ENTextLayer.h */,
-				4D22C16422E09ACF00926FD9 /* ENTextLayer.m */,
+				4D076C9E22E3F9FF003040E6 /* ENTextLayer.h */,
+				4D076C9F22E3F9FF003040E6 /* ENTextLayer.m */,
 			);
 			path = ENTextLayer;
 			sourceTree = "<group>";
 		};
-		4D22C16522E09ACF00926FD9 /* ENFlagLineLayer */ = {
+		4D076CA022E3F9FF003040E6 /* ENFlagLineLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C16622E09ACF00926FD9 /* ENFlagLineLayer.m */,
-				4D22C16722E09ACF00926FD9 /* ENFlagLineLayer.h */,
+				4D076CA122E3F9FF003040E6 /* ENFlagLineLayer.m */,
+				4D076CA222E3F9FF003040E6 /* ENFlagLineLayer.h */,
 			);
 			path = ENFlagLineLayer;
 			sourceTree = "<group>";
 		};
-		4D22C16822E09ACF00926FD9 /* ENBackgroundLayer */ = {
+		4D076CA322E3F9FF003040E6 /* ENBackgroundLayer */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C16922E09ACF00926FD9 /* ENBackgroundLayer.h */,
-				4D22C16A22E09ACF00926FD9 /* ENBackgroundLayer.m */,
+				4D076CA422E3F9FF003040E6 /* ENBackgroundLayer.h */,
+				4D076CA522E3F9FF003040E6 /* ENBackgroundLayer.m */,
 			);
 			path = ENBackgroundLayer;
 			sourceTree = "<group>";
 		};
-		4D22C16C22E09ACF00926FD9 /* KLineModel */ = {
+		4D076CA722E3F9FF003040E6 /* KLineModel */ = {
 			isa = PBXGroup;
 			children = (
-				4D22C16D22E09ACF00926FD9 /* KlineStyle.h */,
-				4D22C16E22E09ACF00926FD9 /* KLineModel.m */,
-				4D22C16F22E09ACF00926FD9 /* KLineDataManager.m */,
-				4D22C17022E09ACF00926FD9 /* KLineModel.h */,
-				4D22C17122E09ACF00926FD9 /* KlineStyle.m */,
-				4D22C17222E09ACF00926FD9 /* KLineDataManager.h */,
+				4D076CA822E3F9FF003040E6 /* KlineStyle.h */,
+				4D076CA922E3F9FF003040E6 /* KLineModel.m */,
+				4D076CAA22E3F9FF003040E6 /* KLineDataManager.m */,
+				4D076CAB22E3F9FF003040E6 /* KLineModel.h */,
+				4D076CAC22E3F9FF003040E6 /* KlineStyle.m */,
+				4D076CAD22E3F9FF003040E6 /* KLineDataManager.h */,
 			);
 			path = KLineModel;
 			sourceTree = "<group>";
@@ -602,34 +601,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				404035C520B53B8400FB250D /* ViewController.m in Sources */,
-				4D22C17422E09ACF00926FD9 /* UIColor+KLineTheme.m in Sources */,
-				4D22C17B22E09ACF00926FD9 /* ENFlagLineLayer.m in Sources */,
+				4D076CAF22E3F9FF003040E6 /* UIColor+KLineTheme.m in Sources */,
+				4D076CB622E3F9FF003040E6 /* ENFlagLineLayer.m in Sources */,
 				4059131F20CFA63A00B090F3 /* AFHTTPSessionManager.m in Sources */,
 				4059132320CFA63A00B090F3 /* AFSecurityPolicy.m in Sources */,
 				4059131B20CFA63A00B090F3 /* UIWebView+AFNetworking.m in Sources */,
 				4059131D20CFA63A00B090F3 /* AFImageDownloader.m in Sources */,
-				4D22C17D22E09ACF00926FD9 /* KLineModel.m in Sources */,
-				4D22C18022E09ACF00926FD9 /* ENChartView.m in Sources */,
-				4D22C17F22E09ACF00926FD9 /* KlineStyle.m in Sources */,
+				4D076CB822E3F9FF003040E6 /* KLineModel.m in Sources */,
+				4D076CBB22E3F9FF003040E6 /* ENChartView.m in Sources */,
+				4D076CBA22E3F9FF003040E6 /* KlineStyle.m in Sources */,
 				4059132020CFA63A00B090F3 /* AFURLSessionManager.m in Sources */,
-				4D22C17622E09ACF00926FD9 /* CAShapeLayer+kLine.m in Sources */,
+				4D076CB122E3F9FF003040E6 /* CAShapeLayer+kLine.m in Sources */,
 				4059132720CFA69F00B090F3 /* NetWorking.m in Sources */,
-				4D22C17A22E09ACF00926FD9 /* ENTextLayer.m in Sources */,
-				4D22C17922E09ACF00926FD9 /* ENCandleLayer.m in Sources */,
+				4D076CB522E3F9FF003040E6 /* ENTextLayer.m in Sources */,
+				4D076CB422E3F9FF003040E6 /* ENCandleLayer.m in Sources */,
 				4059131620CFA63A00B090F3 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4059131720CFA63A00B090F3 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4059131C20CFA63A00B090F3 /* AFAutoPurgingImageCache.m in Sources */,
 				4059131A20CFA63A00B090F3 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-				4D22C17E22E09ACF00926FD9 /* KLineDataManager.m in Sources */,
+				4D076CB922E3F9FF003040E6 /* KLineDataManager.m in Sources */,
 				4059132120CFA63A00B090F3 /* AFURLRequestSerialization.m in Sources */,
 				4059131E20CFA63A00B090F3 /* AFURLResponseSerialization.m in Sources */,
-				4D22C17C22E09ACF00926FD9 /* ENBackgroundLayer.m in Sources */,
+				4D076CB722E3F9FF003040E6 /* ENBackgroundLayer.m in Sources */,
 				4059131520CFA63A00B090F3 /* UIProgressView+AFNetworking.m in Sources */,
-				4D22C17822E09ACF00926FD9 /* ENLineLayer.m in Sources */,
+				4D076CB322E3F9FF003040E6 /* ENLineLayer.m in Sources */,
 				4059131820CFA63A00B090F3 /* UIImageView+AFNetworking.m in Sources */,
-				4D22C17722E09ACF00926FD9 /* ENPanGestureRecognizer.m in Sources */,
+				4D076CB222E3F9FF003040E6 /* ENPanGestureRecognizer.m in Sources */,
 				404035D020B53B8600FB250D /* main.m in Sources */,
-				4D22C17522E09ACF00926FD9 /* NSString+Attributed.m in Sources */,
+				4D076CB022E3F9FF003040E6 /* NSString+Attributed.m in Sources */,
 				404035C220B53B8400FB250D /* AppDelegate.m in Sources */,
 				4059131920CFA63A00B090F3 /* UIButton+AFNetworking.m in Sources */,
 				4059132220CFA63A00B090F3 /* AFNetworkReachabilityManager.m in Sources */,

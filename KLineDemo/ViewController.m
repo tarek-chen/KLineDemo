@@ -204,19 +204,19 @@
     switch (sender.tag) {
         case 0:
             // ma
-            KlineStyle.style.topChartType = ENChartTypeMA;
+            KlineStyle.shared.topChartType = ENChartTypeMA;
             break;
         case 1:
             // BOLL
-            KlineStyle.style.topChartType = ENChartTypeEMA;
+            KlineStyle.shared.topChartType = ENChartTypeEMA;
             break;
         case 2:
             // BOLL
-            KlineStyle.style.topChartType = ENChartTypeBOLL;
+            KlineStyle.shared.topChartType = ENChartTypeBOLL;
             break;
         case 3:
             // line
-            KlineStyle.style.topChartType = ENChartTypeLine;
+            KlineStyle.shared.topChartType = ENChartTypeLine;
             break;
         default:
             break;
@@ -231,19 +231,19 @@
     switch (sender.tag) {
         case 0:
             // macd
-            KlineStyle.style.bottomChartType = ENChartTypeMACD;
+            KlineStyle.shared.bottomChartType = ENChartTypeMACD;
             break;
         case 1:
             // kdj
-            KlineStyle.style.bottomChartType = ENChartTypeKDJ;
+            KlineStyle.shared.bottomChartType = ENChartTypeKDJ;
             break;
         case 2:
             // rsi
-            KlineStyle.style.bottomChartType = ENChartTypeRSI;
+            KlineStyle.shared.bottomChartType = ENChartTypeRSI;
             break;
         case 3:
             // vol
-            KlineStyle.style.bottomChartType = ENChartTypeVOL;
+            KlineStyle.shared.bottomChartType = ENChartTypeVOL;
             break;
         default:
             break;
